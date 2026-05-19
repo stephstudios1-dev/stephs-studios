@@ -1,0 +1,2499 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Steph's Studios — Website Design Presentation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;500;600;700&family=Prata&family=Raleway:wght@300;400;600;700;800;900&family=Archivo:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    /* ===========================
+       PRESENTATION SHELL
+    =========================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #f0ede8;
+      font-family: 'Poppins', sans-serif;
+      color: #1a1a1a;
+    }
+
+    /* Cover page */
+    .cover {
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d1a35 50%, #1a1a1a 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .cover::before {
+      content: '';
+      position: absolute;
+      width: 600px; height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(212,170,255,0.15) 0%, transparent 70%);
+      top: -100px; right: -100px;
+    }
+    .cover::after {
+      content: '';
+      position: absolute;
+      width: 400px; height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,200,120,0.1) 0%, transparent 70%);
+      bottom: -80px; left: -80px;
+    }
+    .cover-content { position: relative; z-index: 2; }
+    .cover-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #d4aaff;
+      margin-bottom: 20px;
+    }
+    .cover-logo {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(48px, 10vw, 96px);
+      color: #fff;
+      line-height: 1;
+      letter-spacing: 2px;
+    }
+    .cover-logo span { color: #d4aaff; }
+    .cover-tagline {
+      font-family: 'Poppins', sans-serif;
+      font-size: 18px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      margin-top: 16px;
+      letter-spacing: 1px;
+    }
+    .cover-divider {
+      width: 60px; height: 2px;
+      background: #d4aaff;
+      margin: 32px auto;
+    }
+    .cover-intro {
+      max-width: 560px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: rgba(255,255,255,0.65);
+    }
+    .cover-note {
+      margin-top: 48px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+    }
+    .design-count {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+    }
+    .design-count span {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.7);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 8px 18px;
+      border-radius: 20px;
+    }
+
+    /* Section separator */
+    .section-header {
+      background: #1a1a1a;
+      color: #fff;
+      padding: 80px 60px 60px;
+      text-align: center;
+    }
+    .section-header .design-number {
+      font-family: 'Anton', sans-serif;
+      font-size: 120px;
+      color: rgba(255,255,255,0.05);
+      line-height: 1;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(36px, 5vw, 60px);
+      color: #fff;
+      line-height: 1.1;
+    }
+    .section-desc {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      margin-top: 12px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+    .vibe-tags {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .vibe-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid;
+    }
+
+    /* Screen cards */
+    .screens-wrap {
+      padding: 0 0 80px;
+    }
+    .screen {
+      margin: 0;
+    }
+    .screen-label {
+      text-align: center;
+      padding: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ===========================
+       DESIGN 1 — BEATRIX
+       Dark editorial magazine
+    =========================== */
+    .d1 { --accent: #3CFFD0; --accent2: #fff; --bg: #131313; --bg2: #1c1c1c; --text: #fff; --muted: rgba(255,255,255,0.5); font-family: 'Poppins', sans-serif; }
+    .d1-header-wrap { background: #1a1a1a; }
+    .d1 .section-header { background: #131313; }
+    .d1 .vibe-tag { border-color: #3CFFD0; color: #3CFFD0; }
+
+    /* D1 Screen 1 — Hero / Homepage */
+    .d1-screen1 {
+      background: #131313;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .d1-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 60px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .d1-logo {
+      font-family: 'Anton', sans-serif;
+      font-size: 26px;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    .d1-logo span { color: #3CFFD0; }
+    .d1-nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .d1-nav-links a {
+      text-decoration: none;
+      color: rgba(255,255,255,0.6);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .d1-nav-links a.active { color: #3CFFD0; }
+    .d1-nav-right { display: flex; align-items: center; gap: 20px; }
+    .d1-subscribe-btn {
+      background: #3CFFD0;
+      color: #131313;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 10px 24px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+    .d1-hero {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .d1-hero-left {
+      padding: 70px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .d1-category {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #3CFFD0;
+      margin-bottom: 20px;
+    }
+    .d1-headline {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(36px, 5vw, 72px);
+      color: #fff;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .d1-body {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.8;
+      max-width: 420px;
+      margin-bottom: 36px;
+    }
+    .d1-cta {
+      display: inline-block;
+      background: transparent;
+      border: 1px solid #3CFFD0;
+      color: #3CFFD0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      text-decoration: none;
+    }
+    .d1-hero-right {
+      position: relative;
+      overflow: hidden;
+      background: #1c1c1c;
+    }
+    .d1-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      opacity: 0.85;
+    }
+    .d1-hero-img-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 500px;
+      background: linear-gradient(160deg, #1c2a27 0%, #131313 60%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .d1-hero-img-placeholder svg { opacity: 0.15; }
+    /* articles grid */
+    .d1-articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .d1-article {
+      padding: 36px 40px;
+      border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    .d1-article:last-child { border-right: none; }
+    .d1-article-cat {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #3CFFD0;
+      margin-bottom: 12px;
+    }
+    .d1-article-thumb {
+      width: 100%;
+      height: 160px;
+      background: linear-gradient(135deg, #1e2a28 0%, #222 100%);
+      border-radius: 2px;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .d1-article-thumb .photo-icon { opacity: 0.12; }
+    .d1-article-title {
+      font-family: 'Anton', sans-serif;
+      font-size: 22px;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 10px;
+    }
+    .d1-article-meta {
+      font-size: 11px;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: 1px;
+    }
+
+    /* D1 Screen 2 — About / Services */
+    .d1-screen2 {
+      background: #1c1c1c;
+      padding: 100px 60px;
+    }
+    .d1-screen2-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .d1-about-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #3CFFD0;
+      margin-bottom: 16px;
+    }
+    .d1-about-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(32px, 4vw, 56px);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .d1-about-text {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+    .d1-stats {
+      display: flex;
+      gap: 40px;
+      margin-top: 40px;
+    }
+    .d1-stat-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 42px;
+      color: #3CFFD0;
+      line-height: 1;
+    }
+    .d1-stat-label {
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: 4px;
+    }
+    .d1-about-visual {
+      background: linear-gradient(160deg, #1a2e29 0%, #131313 100%);
+      border-radius: 4px;
+      height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .d1-about-visual::before {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: rgba(60,255,208,0.06);
+      top: -60px; right: -60px;
+    }
+    .d1-about-name {
+      font-family: 'Anton', sans-serif;
+      font-size: 80px;
+      color: rgba(60,255,208,0.08);
+      line-height: 1;
+      text-align: center;
+    }
+
+    /* D1 Screen 3 — Contact */
+    .d1-screen3 {
+      background: #131313;
+      padding: 100px 60px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .d1-screen3-inner {
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .d1-contact-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(32px, 5vw, 64px);
+      color: #fff;
+      margin-bottom: 16px;
+    }
+    .d1-contact-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+      margin-bottom: 50px;
+    }
+    .d1-form { display: flex; flex-direction: column; gap: 16px; text-align: left; }
+    .d1-input {
+      background: #1c1c1c;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 16px 20px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+      outline: none;
+    }
+    .d1-input::placeholder { color: rgba(255,255,255,0.25); }
+    .d1-textarea {
+      background: #1c1c1c;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: #fff;
+      padding: 16px 20px;
+      font-size: 14px;
+      font-family: 'Poppins', sans-serif;
+      width: 100%;
+      height: 140px;
+      resize: none;
+      outline: none;
+    }
+    .d1-textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .d1-submit {
+      background: #3CFFD0;
+      color: #131313;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border: none;
+      cursor: pointer;
+      align-self: flex-start;
+    }
+    .d1-footer-strip {
+      background: #3CFFD0;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .d1-footer-logo { font-family: 'Anton', sans-serif; font-size: 22px; color: #131313; }
+    .d1-footer-copy { font-size: 12px; color: rgba(0,0,0,0.5); }
+
+    /* ===========================
+       DESIGN 2 — EMILY/PHOTOGRAPHY
+       Elegant dark portfolio
+    =========================== */
+    .d2 { font-family: 'Raleway', sans-serif; }
+    .d2 .section-header { background: #0d0d0d; }
+    .d2 .vibe-tag { border-color: #c9a96e; color: #c9a96e; }
+
+    .d2-screen1 {
+      background: #0d0d0d;
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+    }
+    .d2-nav {
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 60px;
+    }
+    .d2-logo {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 22px;
+      color: #fff;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    .d2-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      cursor: pointer;
+    }
+    .d2-hamburger span {
+      display: block;
+      width: 30px; height: 1px;
+      background: #fff;
+    }
+    .d2-hero-slide {
+      width: 100%;
+      height: 100vh;
+      min-height: 600px;
+      background: linear-gradient(to right, rgba(13,13,13,0.92) 45%, rgba(13,13,13,0.3) 100%),
+                  linear-gradient(160deg, #1a1510 0%, #0d0d0d 100%);
+      display: flex;
+      align-items: center;
+    }
+    .d2-hero-bg-accent {
+      position: absolute;
+      right: 0; top: 0; bottom: 0;
+      width: 55%;
+      background: linear-gradient(135deg, #1a1208 0%, #2a1f0a 50%, #0d0d0d 100%);
+      clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+    .d2-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 60px;
+      max-width: 640px;
+    }
+    .d2-hero-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 24px;
+    }
+    .d2-hero-title {
+      font-weight: 300;
+      font-size: clamp(42px, 6vw, 86px);
+      color: #fff;
+      line-height: 1.1;
+      margin-bottom: 30px;
+    }
+    .d2-hero-title strong { font-weight: 800; display: block; }
+    .d2-hero-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.9;
+      margin-bottom: 40px;
+      max-width: 460px;
+    }
+    .d2-hero-cta {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid #c9a96e;
+      padding-bottom: 8px;
+    }
+    .d2-scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .d2-scroll-line {
+      width: 1px;
+      height: 60px;
+      background: linear-gradient(to bottom, transparent, #c9a96e);
+    }
+    .d2-scroll-text {
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* D2 Screen 2 — Portfolio grid */
+    .d2-screen2 {
+      background: #111;
+      padding: 100px 60px;
+    }
+    .d2-section-tag {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #c9a96e;
+      margin-bottom: 12px;
+    }
+    .d2-section-title {
+      font-size: clamp(28px, 4vw, 52px);
+      font-weight: 300;
+      color: #fff;
+      margin-bottom: 50px;
+    }
+    .d2-section-title strong { font-weight: 800; }
+    .d2-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-rows: 240px 240px;
+      gap: 12px;
+    }
+    .d2-grid-item {
+      background: linear-gradient(135deg, #1a1208 0%, #2a1a08 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .d2-grid-item:first-child { grid-row: 1 / 3; }
+    .d2-grid-item-label {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 20px;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+      color: rgba(255,255,255,0.7);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .d2-grid-icon {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.08;
+    }
+
+    /* D2 Screen 3 — About */
+    .d2-screen3 {
+      background: #0d0d0d;
+      padding: 100px 60px;
+    }
+    .d2-screen3-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .d2-about-visual {
+      height: 550px;
+      background: linear-gradient(135deg, #1a1208 0%, #2a1f0a 60%, #0d0d0d 100%);
+      position: relative;
+    }
+    .d2-about-visual::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; right: -20px;
+      width: 200px; height: 200px;
+      border: 1px solid rgba(201,169,110,0.25);
+    }
+    .d2-about-name-bg {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 900;
+      font-size: 100px;
+      color: rgba(201,169,110,0.06);
+      position: absolute;
+      bottom: 20px; left: 20px;
+      line-height: 1;
+    }
+    .d2-about-text-block { padding-left: 20px; }
+    .d2-footer {
+      background: #0a0a0a;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      padding: 40px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .d2-footer-logo {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 3px;
+    }
+    .d2-footer-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+    .d2-footer-links a {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+    }
+
+    /* ===========================
+       DESIGN 3 — QEEN/BEAUTY
+       Warm editorial beauty blogger
+    =========================== */
+    .d3 { font-family: 'Prata', serif; }
+    .d3 .section-header { background: #1a0f0a; }
+    .d3 .vibe-tag { border-color: #e8b88a; color: #e8b88a; }
+
+    .d3-screen1 {
+      background: #fdf8f3;
+      min-height: 100vh;
+    }
+    .d3-nav {
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 72px;
+      border-bottom: 1px solid #f0e8df;
+    }
+    .d3-logo {
+      font-family: 'Prata', serif;
+      font-size: 24px;
+      color: #1a0f0a;
+      letter-spacing: 1px;
+    }
+    .d3-nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+    .d3-nav-links a {
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      color: #5a4a42;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .d3-hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 72px);
+    }
+    .d3-hero-left {
+      background: #1a0f0a;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .d3-hero-left::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(232,184,138,0.07);
+      top: -100px; right: -200px;
+    }
+    .d3-hero-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #e8b88a;
+      margin-bottom: 20px;
+    }
+    .d3-hero-title {
+      font-family: 'Prata', serif;
+      font-size: clamp(36px, 4vw, 64px);
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 24px;
+    }
+    .d3-hero-title em { color: #e8b88a; font-style: italic; }
+    .d3-hero-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.9;
+      margin-bottom: 36px;
+      max-width: 400px;
+    }
+    .d3-hero-cta {
+      display: inline-block;
+      background: #e8b88a;
+      color: #1a0f0a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      text-decoration: none;
+    }
+    .d3-hero-right {
+      background: linear-gradient(135deg, #f5e6d3 0%, #fdf8f3 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 60px;
+      position: relative;
+    }
+    .d3-featured-badge {
+      position: absolute;
+      top: 40px; right: 40px;
+      width: 90px; height: 90px;
+      border-radius: 50%;
+      background: #1a0f0a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .d3-badge-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #e8b88a;
+      line-height: 1.4;
+    }
+    .d3-hero-quote {
+      font-family: 'Prata', serif;
+      font-size: 20px;
+      color: #1a0f0a;
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+    .d3-hero-quote-author {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #e8b88a;
+    }
+    .d3-photo-placeholder {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #e8d5bf 0%, #f5e6d3 100%);
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.6;
+    }
+
+    /* D3 Screen 2 */
+    .d3-screen2 {
+      background: #fff;
+      padding: 100px 60px;
+    }
+    .d3-section-header-light {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .d3-section-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #e8b88a;
+      margin-bottom: 12px;
+    }
+    .d3-section-title-light {
+      font-family: 'Prata', serif;
+      font-size: clamp(30px, 4vw, 52px);
+      color: #1a0f0a;
+      line-height: 1.2;
+    }
+    .d3-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .d3-service-card {
+      border: 1px solid #f0e8df;
+      padding: 40px 32px;
+      text-align: center;
+    }
+    .d3-service-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: #fdf0e5;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+    }
+    .d3-service-title {
+      font-family: 'Prata', serif;
+      font-size: 20px;
+      color: #1a0f0a;
+      margin-bottom: 12px;
+    }
+    .d3-service-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      color: #7a6a62;
+      line-height: 1.8;
+    }
+
+    /* D3 Screen 3 */
+    .d3-screen3 {
+      background: #1a0f0a;
+      padding: 100px 60px;
+    }
+    .d3-screen3-inner {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .d3-contact-eyebrow {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #e8b88a;
+      margin-bottom: 16px;
+    }
+    .d3-contact-title {
+      font-family: 'Prata', serif;
+      font-size: clamp(32px, 4vw, 60px);
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.2;
+    }
+    .d3-contact-sub {
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+      margin-bottom: 50px;
+    }
+    .d3-form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+    .d3-input {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 16px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      outline: none;
+    }
+    .d3-input::placeholder { color: rgba(255,255,255,0.25); }
+    .d3-submit {
+      background: #e8b88a;
+      color: #1a0f0a;
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 16px 48px;
+      border: none;
+      cursor: pointer;
+      margin-top: 24px;
+    }
+    .d3-footer {
+      background: #0d0706;
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .d3-footer-logo {
+      font-family: 'Prata', serif;
+      font-size: 18px;
+      color: #fff;
+    }
+    .d3-footer-social {
+      display: flex;
+      gap: 20px;
+    }
+    .d3-social-icon {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ===========================
+       DESIGN 4 — FYNEX / COMING SOON
+       Bold dramatic full-screen
+    =========================== */
+    .d4 { font-family: 'Raleway', sans-serif; }
+    .d4 .section-header { background: #0a0a0a; }
+    .d4 .vibe-tag { border-color: #fff; color: #fff; }
+
+    .d4-screen1 {
+      background: #0a0a0a;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+    .d4-bg-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #0a0508 0%, #120e0a 40%, #080a12 100%);
+      z-index: 0;
+    }
+    .d4-bg-texture {
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(255,150,80,0.06) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 20%, rgba(180,120,255,0.06) 0%, transparent 50%);
+      z-index: 1;
+    }
+    .d4-nav {
+      position: relative;
+      z-index: 10;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 30px 60px;
+    }
+    .d4-logo {
+      font-weight: 800;
+      font-size: 18px;
+      color: #fff;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    .d4-nav-menu {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .d4-nav-menu a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .d4-nav-menu a.active { color: #fff; }
+    .d4-hero {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      z-index: 5;
+      padding: 60px;
+    }
+    .d4-hero-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 30px;
+    }
+    .d4-hero-title {
+      font-weight: 900;
+      font-size: clamp(56px, 12vw, 160px);
+      color: #fff;
+      line-height: 0.9;
+      letter-spacing: -2px;
+      text-transform: uppercase;
+    }
+    .d4-hero-title-outline {
+      -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+      color: transparent;
+      display: block;
+    }
+    .d4-hero-subtitle {
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-top: 24px;
+    }
+    .d4-scroll-cta {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .d4-scroll-cta span {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+    }
+    .d4-scroll-line2 {
+      width: 1px;
+      height: 50px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+    }
+    .d4-hero-video-btn {
+      margin-top: 40px;
+      width: 64px; height: 64px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .d4-play-icon {
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 16px solid rgba(255,255,255,0.7);
+      margin-left: 4px;
+    }
+
+    /* D4 Screen 2 — About section */
+    .d4-screen2 {
+      background: #0f0f0f;
+      padding: 120px 60px;
+    }
+    .d4-screen2-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .d4-about-num {
+      font-weight: 900;
+      font-size: 160px;
+      color: rgba(255,255,255,0.03);
+      line-height: 1;
+      position: absolute;
+      top: -30px;
+      left: 0;
+    }
+    .d4-about-block { position: relative; }
+    .d4-about-tag {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-bottom: 20px;
+    }
+    .d4-about-title {
+      font-weight: 900;
+      font-size: clamp(32px, 4vw, 56px);
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .d4-divider-line {
+      width: 40px; height: 2px;
+      background: rgba(255,255,255,0.3);
+      margin-bottom: 24px;
+    }
+    .d4-about-text {
+      font-size: 15px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      line-height: 2;
+      margin-bottom: 36px;
+    }
+    .d4-btn-outline {
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.35);
+      color: rgba(255,255,255,0.8);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      text-decoration: none;
+    }
+    .d4-visual {
+      height: 500px;
+      background: linear-gradient(135deg, #1a0f0a 0%, #0a080d 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .d4-visual::before {
+      content: '';
+      position: absolute;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,150,80,0.08) 0%, transparent 70%);
+      bottom: -50px; right: -50px;
+    }
+    .d4-visual-text {
+      font-weight: 900;
+      font-size: 100px;
+      color: rgba(255,255,255,0.04);
+      position: absolute;
+      bottom: 20px; left: 20px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    /* D4 Screen 3 — Services */
+    .d4-screen3 {
+      background: #0a0a0a;
+      padding: 100px 60px;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .d4-services-header {
+      margin-bottom: 60px;
+    }
+    .d4-services-title {
+      font-weight: 900;
+      font-size: clamp(36px, 5vw, 72px);
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.05;
+    }
+    .d4-services-title span {
+      -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+      color: transparent;
+    }
+    .d4-services-list {
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .d4-service-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 30px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .d4-service-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 2px;
+      width: 60px;
+    }
+    .d4-service-name {
+      font-weight: 800;
+      font-size: 22px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      flex: 1;
+    }
+    .d4-service-desc {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.35);
+      max-width: 320px;
+      text-align: right;
+    }
+    .d4-footer {
+      background: #080808;
+      padding: 40px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+    .d4-footer-logo {
+      font-weight: 800;
+      font-size: 20px;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    /* ===========================
+       DESIGN 5 — UPCREATORS
+       Bold modern creator agency
+    =========================== */
+    .d5 { font-family: 'Archivo', sans-serif; }
+    .d5 .section-header { background: #212122; }
+    .d5 .vibe-tag { border-color: #f1b84b; color: #f1b84b; }
+
+    .d5-screen1 {
+      background: #f1ff38;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .d5-nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 60px;
+      height: 84px;
+      border-bottom: 3px solid #212122;
+      background: #fff;
+    }
+    .d5-logo {
+      font-weight: 900;
+      font-size: 20px;
+      color: #212122;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .d5-logo span { color: #f1b84b; }
+    .d5-nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .d5-nav-links a {
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      color: #212122;
+      letter-spacing: 1px;
+    }
+    .d5-nav-links a.active {
+      position: relative;
+    }
+    .d5-nav-links a.active::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0; right: 0;
+      height: 3px;
+      background: #212122;
+    }
+    .d5-nav-btn {
+      background: #212122;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 12px 28px;
+      border-radius: 2px;
+    }
+    .d5-hero {
+      flex: 1;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #f1ff38;
+      position: relative;
+    }
+    .d5-hero-left {
+      padding: 80px 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .d5-hero-icon {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .d5-hero-title {
+      font-weight: 900;
+      font-size: clamp(42px, 5vw, 80px);
+      color: #212122;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .d5-hero-title .outlined {
+      -webkit-text-stroke: 2px #212122;
+      color: transparent;
+      display: block;
+    }
+    .d5-hero-text {
+      font-size: 16px;
+      color: rgba(33,33,34,0.65);
+      line-height: 1.8;
+      max-width: 440px;
+      margin-bottom: 36px;
+    }
+    .d5-hero-actions { display: flex; gap: 16px; align-items: center; }
+    .d5-btn-black {
+      display: inline-block;
+      background: #212122;
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 14px 32px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+    .d5-btn-outline {
+      display: inline-block;
+      border: 2px solid #212122;
+      color: #212122;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 12px 30px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+    .d5-hero-right {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 60px 60px 0;
+      position: relative;
+    }
+    .d5-hero-photo {
+      width: 300px;
+      height: 420px;
+      background: linear-gradient(160deg, #212122 0%, #3a3a3b 100%);
+      position: relative;
+      z-index: 2;
+    }
+    .d5-hero-photo-name {
+      font-weight: 900;
+      font-size: 60px;
+      color: rgba(255,255,255,0.12);
+      position: absolute;
+      bottom: 20px; left: 20px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+    .d5-hero-bg-logo {
+      font-weight: 900;
+      font-size: 180px;
+      color: rgba(33,33,34,0.07);
+      position: absolute;
+      right: -20px;
+      top: 30px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+    .d5-ticker-strip {
+      background: #212122;
+      padding: 14px 60px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .d5-ticker-text {
+      font-weight: 700;
+      font-size: 16px;
+      color: #f1ff38;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      display: inline-block;
+      animation: ticker 20s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* D5 Screen 2 — Services */
+    .d5-screen2 {
+      background: #fff;
+      padding: 100px 60px;
+    }
+    .d5-section-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #727272;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .d5-section-label::before {
+      content: '';
+      width: 20px; height: 3px;
+      background: #f1b84b;
+    }
+    .d5-section-title {
+      font-weight: 900;
+      font-size: clamp(30px, 4vw, 56px);
+      color: #212122;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 60px;
+    }
+    .d5-section-title span {
+      -webkit-text-stroke: 2px #212122;
+      color: transparent;
+    }
+    .d5-services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 3px solid #212122;
+    }
+    .d5-service-cell {
+      padding: 40px 32px;
+      border-right: 3px solid #212122;
+      border-bottom: 3px solid #212122;
+    }
+    .d5-service-cell:nth-child(3) { border-right: none; }
+    .d5-service-cell:nth-child(4),
+    .d5-service-cell:nth-child(5),
+    .d5-service-cell:nth-child(6) { border-bottom: none; }
+    .d5-service-cell-num {
+      font-weight: 900;
+      font-size: 48px;
+      color: #f1b84b;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+    .d5-service-cell-title {
+      font-weight: 900;
+      font-size: 18px;
+      color: #212122;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .d5-service-cell-text {
+      font-size: 14px;
+      color: #727272;
+      line-height: 1.7;
+    }
+
+    /* D5 Screen 3 — CTA / Contact */
+    .d5-screen3 {
+      background: #212122;
+      padding: 100px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+    .d5-screen3::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle at 20% 50%, rgba(241,184,75,0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 30%, rgba(241,255,56,0.05) 0%, transparent 50%);
+    }
+    .d5-cta-inner {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .d5-cta-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #f1b84b;
+      margin-bottom: 20px;
+    }
+    .d5-cta-title {
+      font-weight: 900;
+      font-size: clamp(32px, 4vw, 60px);
+      color: #fff;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 24px;
+    }
+    .d5-cta-title span { color: #f1ff38; }
+    .d5-cta-text {
+      font-size: 15px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+      margin-bottom: 40px;
+    }
+    .d5-cta-btn {
+      display: inline-block;
+      background: #f1b84b;
+      color: #212122;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 40px;
+      border-radius: 2px;
+      text-decoration: none;
+    }
+    .d5-form-side { }
+    .d5-form { display: flex; flex-direction: column; gap: 12px; }
+    .d5-fi {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 14px 18px;
+      font-family: 'Archivo', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      outline: none;
+      border-radius: 2px;
+    }
+    .d5-fi::placeholder { color: rgba(255,255,255,0.25); }
+    .d5-form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .d5-fs {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      color: #fff;
+      padding: 14px 18px;
+      font-family: 'Archivo', sans-serif;
+      font-size: 14px;
+      width: 100%;
+      height: 120px;
+      resize: none;
+      outline: none;
+      border-radius: 2px;
+    }
+    .d5-fs::placeholder { color: rgba(255,255,255,0.25); }
+    .d5-form-submit {
+      background: #f1b84b;
+      color: #212122;
+      font-family: 'Archivo', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px;
+      border: none;
+      cursor: pointer;
+      border-radius: 2px;
+    }
+    .d5-footer {
+      background: #191919;
+      padding: 24px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 3px solid #f1b84b;
+    }
+    .d5-footer-logo {
+      font-weight: 900;
+      font-size: 18px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .d5-footer-logo span { color: #f1b84b; }
+    .d5-footer-text {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* ===========================
+       SELECTION + NOTES SECTION
+    =========================== */
+    .selection-section {
+      background: #fff;
+      padding: 100px 60px;
+    }
+    .selection-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .selection-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #9a7fc7;
+      margin-bottom: 16px;
+    }
+    .selection-title {
+      font-family: 'Anton', sans-serif;
+      font-size: clamp(36px, 5vw, 64px);
+      color: #1a1a1a;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .selection-sub {
+      font-size: 16px;
+      color: #666;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto 60px;
+    }
+    .design-cards {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-bottom: 60px;
+    }
+    .design-card {
+      border: 2px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 24px 16px;
+      text-align: center;
+      cursor: pointer;
+    }
+    .design-card-num {
+      font-family: 'Anton', sans-serif;
+      font-size: 32px;
+      color: #e5e5e5;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .design-card-name {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #1a1a1a;
+      margin-bottom: 6px;
+    }
+    .design-card-vibe {
+      font-size: 10px;
+      color: #999;
+    }
+    .design-card-swatch {
+      height: 6px;
+      border-radius: 3px;
+      margin-top: 14px;
+    }
+    .d1-swatch { background: linear-gradient(90deg, #3CFFD0, #131313); }
+    .d2-swatch { background: linear-gradient(90deg, #c9a96e, #0d0d0d); }
+    .d3-swatch { background: linear-gradient(90deg, #e8b88a, #1a0f0a); }
+    .d4-swatch { background: linear-gradient(90deg, #fff, #0a0a0a); }
+    .d5-swatch { background: linear-gradient(90deg, #f1b84b, #212122); }
+    .notes-box {
+      background: #fafafa;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      padding: 40px;
+      text-align: left;
+    }
+    .notes-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #1a1a1a;
+      margin-bottom: 16px;
+    }
+    .notes-text {
+      font-size: 14px;
+      color: #666;
+      line-height: 2;
+    }
+    .notes-text li { margin-bottom: 8px; }
+
+    /* Utility */
+    svg { max-width: 100%; }
+    @media (max-width: 900px) {
+      .d1-nav, .d2-nav, .d3-nav, .d4-nav, .d5-nav { padding: 20px 30px; }
+      .d1-hero { grid-template-columns: 1fr; }
+      .d1-hero-right { display: none; }
+      .d1-articles { grid-template-columns: 1fr; }
+      .d2-screen2 .d2-grid { grid-template-columns: 1fr; }
+      .d3-hero { grid-template-columns: 1fr; }
+      .d3-hero-right { display: none; }
+      .d4-screen2-inner { grid-template-columns: 1fr; }
+      .d5-hero { grid-template-columns: 1fr; }
+      .d5-hero-bg-logo { display: none; }
+      .d5-cta-inner { grid-template-columns: 1fr; }
+      .design-cards { grid-template-columns: repeat(2,1fr); }
+      .d5-services-grid { grid-template-columns: 1fr; }
+      .d3-services-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     COVER PAGE
+============================= -->
+<div class="cover">
+  <div class="cover-content">
+    <p class="cover-eyebrow">Website Design Presentation</p>
+    <h1 class="cover-logo">Steph's<span>.</span>Studios</h1>
+    <p class="cover-tagline">UGC Creator · Dubai</p>
+    <div class="cover-divider"></div>
+    <p class="cover-intro">
+      Below are 5 unique website design directions for Steph's Studios. Each concept has been crafted to reflect the energy of a modern content creator in Dubai — bold, aspirational, and authentic.
+    </p>
+    <div class="design-count">
+      <span>Design 01 — Dark Magazine</span>
+      <span>Design 02 — Luxury Portfolio</span>
+      <span>Design 03 — Warm Beauty</span>
+      <span>Design 04 — Dramatic Bold</span>
+      <span>Design 05 — Creator Agency</span>
+    </div>
+    <p class="cover-note">Scroll down to explore each design across 3 screens</p>
+  </div>
+</div>
+
+
+<!-- ============================
+     DESIGN 1 — BEATRIX / DARK MAGAZINE
+============================= -->
+<div class="d1">
+  <div class="section-header" style="background: #131313; padding: 80px 60px 60px; text-align: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Anton',sans-serif; font-size: 200px; color: rgba(60,255,208,0.04); white-space: nowrap;">01</div>
+    <p class="section-label" style="position:relative;z-index:2;">Design Direction</p>
+    <h2 class="section-title" style="position:relative;z-index:2;">Dark Magazine</h2>
+    <p class="section-desc" style="position:relative;z-index:2;">Editorial, high-contrast, and modern. A dark-background magazine style that feels premium and content-forward — perfect for a creator who wants to be taken seriously.</p>
+    <div class="vibe-tags" style="position:relative;z-index:2;">
+      <span class="vibe-tag">Editorial</span>
+      <span class="vibe-tag">High-Contrast</span>
+      <span class="vibe-tag">Modern</span>
+      <span class="vibe-tag">Mint Accent</span>
+    </div>
+  </div>
+
+  <!-- Screen 1: Homepage Hero -->
+  <div class="d1-screen1">
+    <p class="screen-label" style="background:#1a1a1a; color:rgba(255,255,255,0.3)">Screen 01 — Homepage</p>
+    <nav class="d1-nav">
+      <div class="d1-logo">STEPH'S<span>.</span>STUDIOS</div>
+      <ul class="d1-nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">UGC Work</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="d1-nav-right">
+        <a href="#" class="d1-subscribe-btn">Work With Me</a>
+      </div>
+    </nav>
+    <div class="d1-hero">
+      <div class="d1-hero-left">
+        <p class="d1-category">UGC Creator · Dubai · Brand Partnerships</p>
+        <h1 class="d1-headline">Content That<br>Converts.</h1>
+        <p class="d1-body">Dubai-based UGC creator crafting authentic, scroll-stopping content for lifestyle, beauty, travel, and F&B brands. From concept to camera — I create videos and visuals your audience will actually want to watch.</p>
+        <a href="#" class="d1-cta">See My Work</a>
+      </div>
+      <div class="d1-hero-right">
+        <div class="d1-hero-img-placeholder">
+          <svg width="120" height="120" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5">
+            <rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="d1-articles">
+      <div class="d1-article">
+        <p class="d1-article-cat">Beauty</p>
+        <div class="d1-article-thumb">
+          <svg class="photo-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <h3 class="d1-article-title">Skincare UGC for Sephora UAE</h3>
+        <p class="d1-article-meta">Dubai · 2 weeks ago</p>
+      </div>
+      <div class="d1-article">
+        <p class="d1-article-cat">Lifestyle</p>
+        <div class="d1-article-thumb">
+          <svg class="photo-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <h3 class="d1-article-title">Travel Content — Dubai Marina Campaign</h3>
+        <p class="d1-article-meta">Travel · 1 month ago</p>
+      </div>
+      <div class="d1-article">
+        <p class="d1-article-cat">Food &amp; Beverage</p>
+        <div class="d1-article-thumb">
+          <svg class="photo-icon" width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <h3 class="d1-article-title">Restaurant Reel Series — Downtown Dubai</h3>
+        <p class="d1-article-meta">F&amp;B · 6 weeks ago</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2: About / Services -->
+  <div class="d1-screen2">
+    <p class="screen-label" style="color:rgba(255,255,255,0.2); padding-bottom: 40px;">Screen 02 — About / Portfolio</p>
+    <div class="d1-screen2-inner">
+      <div>
+        <p class="d1-about-tag">About Me</p>
+        <h2 class="d1-about-title">I'm Steph.<br>I Make Brands<br>Look Human.</h2>
+        <p class="d1-about-text">Based in the heart of Dubai, I create UGC (User Generated Content) that actually connects. My content doesn't feel like an ad — it feels like a recommendation from a friend.</p>
+        <p class="d1-about-text">Whether you need product demos, lifestyle reels, unboxings, or review-style videos — I deliver content that drives results for brands across the Middle East and globally.</p>
+        <div class="d1-stats">
+          <div>
+            <div class="d1-stat-num">50+</div>
+            <div class="d1-stat-label">Brands Worked With</div>
+          </div>
+          <div>
+            <div class="d1-stat-num">3+</div>
+            <div class="d1-stat-label">Years Creating</div>
+          </div>
+          <div>
+            <div class="d1-stat-num">🇦🇪</div>
+            <div class="d1-stat-label">Dubai Based</div>
+          </div>
+        </div>
+      </div>
+      <div class="d1-about-visual">
+        <div class="d1-about-name">STEPH<br>STUDIOS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 3: Contact -->
+  <div class="d1-screen3">
+    <p class="screen-label" style="color:rgba(255,255,255,0.2); text-align:left; padding: 0 0 40px 0;">Screen 03 — Contact</p>
+    <div class="d1-screen3-inner">
+      <p class="d1-about-tag">Get In Touch</p>
+      <h2 class="d1-contact-title">Let's Create<br>Together.</h2>
+      <p class="d1-contact-sub">Ready to elevate your brand with authentic content? Drop me a message and let's chat about your next campaign.</p>
+      <form class="d1-form">
+        <input type="text" class="d1-input" placeholder="Your Name">
+        <input type="email" class="d1-input" placeholder="Email Address">
+        <input type="text" class="d1-input" placeholder="Brand / Company">
+        <textarea class="d1-textarea" placeholder="Tell me about your project..."></textarea>
+        <button class="d1-submit" type="button">Send Message</button>
+      </form>
+    </div>
+    <div style="height: 60px;"></div>
+    <div class="d1-footer-strip">
+      <div class="d1-footer-logo">STEPH'S STUDIOS</div>
+      <div class="d1-footer-copy">© 2025 Steph's Studios · Dubai, UAE</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================
+     DESIGN 2 — EMILY / LUXURY PORTFOLIO
+============================= -->
+<div class="d2">
+  <div class="section-header" style="background: #0d0d0d; padding: 80px 60px 60px; text-align: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Raleway',sans-serif; font-weight: 900; font-size: 200px; color: rgba(201,169,110,0.04); white-space: nowrap;">02</div>
+    <p class="section-label" style="position:relative;z-index:2;">Design Direction</p>
+    <h2 class="section-title" style="font-family:'Raleway',sans-serif; font-weight:300; position:relative;z-index:2;">Luxury <strong style="font-weight:800;">Portfolio</strong></h2>
+    <p class="section-desc" style="position:relative;z-index:2;">Elegant, cinematic, and sophisticated. A dark portfolio with gold accents and full-screen visuals — for the creator who wants to feel like a brand in their own right.</p>
+    <div class="vibe-tags" style="position:relative;z-index:2;">
+      <span class="vibe-tag">Elegant</span>
+      <span class="vibe-tag">Cinematic</span>
+      <span class="vibe-tag">Gold Accents</span>
+      <span class="vibe-tag">Luxury</span>
+    </div>
+  </div>
+
+  <!-- Screen 1: Hero -->
+  <div class="d2-screen1">
+    <p class="screen-label" style="background:#0d0d0d; position:relative; z-index:20; color:rgba(255,255,255,0.25);">Screen 01 — Homepage</p>
+    <nav class="d2-nav">
+      <div class="d2-logo">Steph's Studios</div>
+      <div class="d2-hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </nav>
+    <div class="d2-hero-bg-accent"></div>
+    <div class="d2-hero-slide">
+      <div class="d2-hero-content">
+        <p class="d2-hero-eyebrow">UGC Creator · Dubai, UAE</p>
+        <h1 class="d2-hero-title">
+          Authentic<br>
+          <strong>Content,</strong><br>
+          Real Results.
+        </h1>
+        <p class="d2-hero-text">I create user-generated content that feels genuine, moves people, and delivers measurable value for the brands I partner with across the UAE and beyond.</p>
+        <a href="#" class="d2-hero-cta">View Portfolio</a>
+      </div>
+    </div>
+    <div class="d2-scroll-indicator">
+      <div class="d2-scroll-line"></div>
+      <span class="d2-scroll-text">Scroll</span>
+    </div>
+  </div>
+
+  <!-- Screen 2: Portfolio Grid -->
+  <div class="d2-screen2">
+    <p class="screen-label" style="color:rgba(255,255,255,0.2); padding-bottom: 40px;">Screen 02 — Portfolio</p>
+    <p class="d2-section-tag">Selected Work</p>
+    <h2 class="d2-section-title">Content <strong>Portfolio</strong></h2>
+    <div class="d2-grid">
+      <div class="d2-grid-item">
+        <div class="d2-grid-icon">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <div class="d2-grid-item-label">Beauty Campaign — UAE</div>
+      </div>
+      <div class="d2-grid-item">
+        <div class="d2-grid-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <div class="d2-grid-item-label">Lifestyle Reels</div>
+      </div>
+      <div class="d2-grid-item">
+        <div class="d2-grid-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <div class="d2-grid-item-label">Travel Content</div>
+      </div>
+      <div class="d2-grid-item">
+        <div class="d2-grid-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <div class="d2-grid-item-label">Testimonial UGC</div>
+      </div>
+      <div class="d2-grid-item">
+        <div class="d2-grid-icon">
+          <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="0.5"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg>
+        </div>
+        <div class="d2-grid-item-label">Product Reviews</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 3: About -->
+  <div class="d2-screen3">
+    <p class="screen-label" style="color:rgba(255,255,255,0.2); padding-bottom: 40px;">Screen 03 — About + Contact</p>
+    <div class="d2-screen3-inner">
+      <div class="d2-about-visual">
+        <div class="d2-about-name-bg">S.S</div>
+      </div>
+      <div class="d2-about-text-block">
+        <p class="d2-section-tag">About Steph</p>
+        <h2 class="d2-section-title">Creating <strong>Stories</strong><br>Brands Can't<br><strong>Buy.</strong></h2>
+        <p style="font-family:'Raleway',sans-serif; font-weight:300; font-size:15px; color:rgba(255,255,255,0.5); line-height:1.9; margin-bottom: 20px;">I'm a Dubai-based UGC creator specialising in authentic content for beauty, lifestyle, F&B, and travel brands. I've helped 50+ brands cut through the noise with content that truly resonates.</p>
+        <p style="font-family:'Raleway',sans-serif; font-weight:300; font-size:15px; color:rgba(255,255,255,0.5); line-height:1.9; margin-bottom: 36px;">UGC works because it doesn't look like advertising — it looks like your customer loving your product. That's what I create.</p>
+        <a href="#" style="display:inline-block; border: 1px solid #c9a96e; color: #c9a96e; font-family:'Raleway',sans-serif; font-size:11px; font-weight:700; letter-spacing:4px; text-transform:uppercase; padding: 14px 32px; text-decoration:none;">Contact Me</a>
+      </div>
+    </div>
+    <div style="height: 60px;"></div>
+    <footer class="d2-footer">
+      <div class="d2-footer-logo">Steph's Studios</div>
+      <ul class="d2-footer-links">
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">TikTok</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </footer>
+  </div>
+</div>
+
+
+<!-- ============================
+     DESIGN 3 — QEEN / WARM BEAUTY
+============================= -->
+<div class="d3">
+  <div class="section-header" style="background: #1a0f0a; padding: 80px 60px 60px; text-align: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Prata',serif; font-size: 200px; color: rgba(232,184,138,0.05); white-space: nowrap;">03</div>
+    <p class="section-label" style="position:relative;z-index:2;">Design Direction</p>
+    <h2 class="section-title" style="font-family:'Prata',serif; position:relative;z-index:2;"><em style="font-style:italic; color:#e8b88a;">Warm</em> Beauty</h2>
+    <p class="section-desc" style="position:relative;z-index:2;">Feminine, editorial, and warm. Serif typography meets sand tones and deep espresso — an aspirational, content-creator-meets-luxury-magazine aesthetic that Dubai embodies perfectly.</p>
+    <div class="vibe-tags" style="position:relative;z-index:2;">
+      <span class="vibe-tag">Feminine</span>
+      <span class="vibe-tag">Editorial</span>
+      <span class="vibe-tag">Warm Tones</span>
+      <span class="vibe-tag">Serif Type</span>
+    </div>
+  </div>
+
+  <!-- Screen 1: Homepage -->
+  <div class="d3-screen1">
+    <p class="screen-label" style="background:#fdf8f3; color:#c5b0a0; border-bottom: 1px solid #f0e8df;">Screen 01 — Homepage</p>
+    <nav class="d3-nav">
+      <div class="d3-logo">Steph's Studios</div>
+      <ul class="d3-nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="d3-hero">
+      <div class="d3-hero-left">
+        <p class="d3-hero-eyebrow">UGC Creator Based in Dubai</p>
+        <h1 class="d3-hero-title">Content That<br>Feels Like<br><em>Real Life.</em></h1>
+        <p class="d3-hero-text">I create authentic, engaging user-generated content for beauty, lifestyle, and F&B brands in the UAE and beyond. When your brand looks this good, customers do the selling for you.</p>
+        <a href="#" class="d3-hero-cta">View My Work</a>
+      </div>
+      <div class="d3-hero-right">
+        <div class="d3-featured-badge">
+          <p class="d3-badge-text">Dubai<br>Based<br>UGC</p>
+        </div>
+        <div class="d3-photo-placeholder">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#c5a882" stroke-width="0.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <p class="d3-hero-quote">"Authentic content is the most powerful form of marketing — and I help brands unlock it."</p>
+        <p class="d3-hero-quote-author">— Steph, Dubai</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2: Services -->
+  <div class="d3-screen2">
+    <p class="screen-label" style="color:#c5a882; padding-bottom: 40px;">Screen 02 — Services</p>
+    <div class="d3-section-header-light">
+      <p class="d3-section-eyebrow">What I Create</p>
+      <h2 class="d3-section-title">Content Services<br><em>For Growing Brands</em></h2>
+    </div>
+    <div class="d3-services-grid">
+      <div class="d3-service-card">
+        <div class="d3-service-icon">🎬</div>
+        <h3 class="d3-service-title">Video UGC</h3>
+        <p class="d3-service-text">Short-form videos for TikTok, Instagram Reels, and brand ads. Authentic, on-trend, and optimised for engagement in the UAE market.</p>
+      </div>
+      <div class="d3-service-card">
+        <div class="d3-service-icon">📸</div>
+        <h3 class="d3-service-title">Photo Content</h3>
+        <p class="d3-service-text">Lifestyle photography for products, beauty, F&B, and travel — shot in Dubai's most stunning locations.</p>
+      </div>
+      <div class="d3-service-card">
+        <div class="d3-service-icon">✨</div>
+        <h3 class="d3-service-title">Brand Partnerships</h3>
+        <p class="d3-service-text">Long-term brand collaboration campaigns that build trust with your audience through consistent, quality storytelling.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 3: Contact -->
+  <div class="d3-screen3">
+    <p class="screen-label" style="color:rgba(232,184,138,0.4); padding-bottom: 40px;">Screen 03 — Contact</p>
+    <div class="d3-screen3-inner">
+      <p class="d3-contact-eyebrow">Let's Connect</p>
+      <h2 class="d3-contact-title">Ready to Create<br><em style="font-style:italic; color:#e8b88a;">Something Beautiful?</em></h2>
+      <p class="d3-contact-sub">Whether you're a startup or an established brand, I'd love to hear about your project. Based in Dubai — available worldwide.</p>
+      <form>
+        <div class="d3-form-row">
+          <input class="d3-input" type="text" placeholder="Your Name">
+          <input class="d3-input" type="email" placeholder="Email Address">
+        </div>
+        <input class="d3-input" type="text" placeholder="Brand / Company Name" style="width:100%; margin-bottom:16px; display:block;">
+        <textarea class="d3-input" placeholder="Tell me about your project..." style="height:120px; resize:none;"></textarea>
+        <div style="text-align:center;">
+          <button class="d3-submit" type="button">Send Enquiry</button>
+        </div>
+      </form>
+    </div>
+    <div style="height: 60px;"></div>
+    <footer class="d3-footer">
+      <div class="d3-footer-logo">Steph's Studios</div>
+      <div class="d3-footer-social">
+        <div class="d3-social-icon">in</div>
+        <div class="d3-social-icon">▶</div>
+        <div class="d3-social-icon">◯</div>
+      </div>
+    </footer>
+  </div>
+</div>
+
+
+<!-- ============================
+     DESIGN 4 — FYNEX / DRAMATIC BOLD
+============================= -->
+<div class="d4">
+  <div class="section-header" style="background: #0a0a0a; padding: 80px 60px 60px; text-align: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Raleway',sans-serif; font-weight:900; font-size: 200px; color: rgba(255,255,255,0.03); white-space: nowrap;">04</div>
+    <p class="section-label" style="position:relative;z-index:2;">Design Direction</p>
+    <h2 class="section-title" style="font-family:'Raleway',sans-serif; font-weight:900; position:relative;z-index:2; text-transform:uppercase;">Dramatic Bold</h2>
+    <p class="section-desc" style="position:relative;z-index:2;">Minimal, full-screen, and powerfully impactful. Pure black with dramatic type — a statement-making design that commands attention and lets the work speak for itself.</p>
+    <div class="vibe-tags" style="position:relative;z-index:2;">
+      <span class="vibe-tag">Minimal</span>
+      <span class="vibe-tag">Full-Screen</span>
+      <span class="vibe-tag">Dramatic</span>
+      <span class="vibe-tag">Typographic</span>
+    </div>
+  </div>
+
+  <!-- Screen 1: Full-screen hero -->
+  <div class="d4-screen1">
+    <div class="d4-bg-overlay"></div>
+    <div class="d4-bg-texture"></div>
+    <p class="screen-label" style="position:relative; z-index:20; background:#0a0a0a; color:rgba(255,255,255,0.2);">Screen 01 — Homepage</p>
+    <nav class="d4-nav">
+      <div class="d4-logo">Steph's Studios</div>
+      <ul class="d4-nav-menu">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="d4-hero">
+      <p class="d4-hero-label">Dubai · UGC Creator · Brand Content</p>
+      <h1 class="d4-hero-title">
+        STEPH'S
+        <span class="d4-hero-title-outline">STUDIOS</span>
+      </h1>
+      <p class="d4-hero-subtitle">Where Brands Come to Life</p>
+      <div class="d4-hero-video-btn">
+        <div class="d4-play-icon"></div>
+      </div>
+      <div class="d4-scroll-cta">
+        <span>Scroll</span>
+        <div class="d4-scroll-line2"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 2: About -->
+  <div class="d4-screen2">
+    <p class="screen-label" style="color:rgba(255,255,255,0.2); padding-bottom: 60px;">Screen 02 — About</p>
+    <div class="d4-screen2-inner">
+      <div class="d4-about-block">
+        <p class="d4-about-tag">About</p>
+        <h2 class="d4-about-title">Making Brands<br>Unforgettable.</h2>
+        <div class="d4-divider-line"></div>
+        <p class="d4-about-text">I'm Steph — a Dubai-based UGC creator who specialises in content that does more than look good. I create video and photo content that brands can use as ads, website assets, and social media posts.</p>
+        <p class="d4-about-text">From luxury hospitality to streetwear, beauty to tech — my content fits seamlessly into any brand's world while feeling completely real.</p>
+        <a href="#" class="d4-btn-outline">See My Work</a>
+      </div>
+      <div class="d4-visual">
+        <div class="d4-visual-text">SS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 3: Services list -->
+  <div class="d4-screen3">
+    <p class="screen-label" style="color:rgba(255,255,255,0.2); padding-bottom: 40px;">Screen 03 — Services + Contact</p>
+    <div class="d4-services-header">
+      <h2 class="d4-services-title">
+        What I<br>
+        <span>Create</span>
+      </h2>
+    </div>
+    <div class="d4-services-list">
+      <div class="d4-service-row">
+        <span class="d4-service-num">01</span>
+        <span class="d4-service-name">Video UGC</span>
+        <span class="d4-service-desc">TikTok, Reels &amp; ad-ready video content for your brand</span>
+      </div>
+      <div class="d4-service-row">
+        <span class="d4-service-num">02</span>
+        <span class="d4-service-name">Photo Content</span>
+        <span class="d4-service-desc">Lifestyle and product photography that converts</span>
+      </div>
+      <div class="d4-service-row">
+        <span class="d4-service-num">03</span>
+        <span class="d4-service-name">Brand Partnerships</span>
+        <span class="d4-service-desc">Ongoing collaboration for consistent brand storytelling</span>
+      </div>
+      <div class="d4-service-row">
+        <span class="d4-service-num">04</span>
+        <span class="d4-service-name">Review &amp; Unboxing</span>
+        <span class="d4-service-desc">Authentic review content that builds trust at scale</span>
+      </div>
+      <div class="d4-service-row">
+        <span class="d4-service-num">05</span>
+        <span class="d4-service-name">Location Content</span>
+        <span class="d4-service-desc">Shot across Dubai's most iconic and hidden locations</span>
+      </div>
+    </div>
+    <div style="margin-top: 80px; text-align: center;">
+      <a href="#" class="d4-btn-outline" style="font-size:14px; letter-spacing:6px;">Get In Touch</a>
+    </div>
+    <div style="height: 60px;"></div>
+    <div class="d4-footer">
+      <div class="d4-footer-logo">Steph's Studios</div>
+      <div style="font-size:12px; color:rgba(255,255,255,0.2); letter-spacing:1px;">Dubai, UAE · © 2025</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ============================
+     DESIGN 5 — UPCREATORS / CREATOR AGENCY
+============================= -->
+<div class="d5">
+  <div class="section-header" style="background: #212122; padding: 80px 60px 60px; text-align: center; position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); font-family: 'Archivo',sans-serif; font-weight:900; font-size: 200px; color: rgba(241,184,75,0.05); white-space: nowrap;">05</div>
+    <p class="section-label" style="position:relative;z-index:2;">Design Direction</p>
+    <h2 class="section-title" style="font-family:'Archivo',sans-serif; font-weight:900; position:relative;z-index:2; text-transform:uppercase;">Creator Agency</h2>
+    <p class="section-desc" style="position:relative;z-index:2;">Bold, graphic, and high-energy. A creator-meets-agency design with strong borders, yellow accents, and pure graphic confidence — for the creator ready to be a brand.</p>
+    <div class="vibe-tags" style="position:relative;z-index:2;">
+      <span class="vibe-tag">Bold & Graphic</span>
+      <span class="vibe-tag">Yellow Accent</span>
+      <span class="vibe-tag">Agency Feel</span>
+      <span class="vibe-tag">High Energy</span>
+    </div>
+  </div>
+
+  <!-- Screen 1: Homepage -->
+  <div class="d5-screen1">
+    <p class="screen-label" style="background:#fff; border-bottom: 3px solid #212122; color:#999;">Screen 01 — Homepage</p>
+    <nav class="d5-nav">
+      <div class="d5-logo">Steph's <span>Studios</span></div>
+      <ul class="d5-nav-links">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Work</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="d5-nav-btn">Work With Me</div>
+    </nav>
+    <div class="d5-hero">
+      <div class="d5-hero-left">
+        <p class="d5-hero-icon">✦</p>
+        <h1 class="d5-hero-title">
+          Content
+          <span class="outlined">That</span>
+          Converts.
+        </h1>
+        <p class="d5-hero-text">Dubai-based UGC creator making authentic, scroll-stopping content for beauty, lifestyle, travel, and F&B brands. Less polished ad. More real moment.</p>
+        <div class="d5-hero-actions">
+          <a href="#" class="d5-btn-black">View Portfolio</a>
+          <a href="#" class="d5-btn-outline">My Services</a>
+        </div>
+      </div>
+      <div class="d5-hero-right">
+        <div class="d5-hero-bg-logo">SS</div>
+        <div class="d5-hero-photo">
+          <div class="d5-hero-photo-name">Steph</div>
+        </div>
+      </div>
+    </div>
+    <div class="d5-ticker-strip">
+      <span class="d5-ticker-text">
+        ✦ UGC Creator &nbsp;&nbsp; ✦ Dubai Based &nbsp;&nbsp; ✦ Video Content &nbsp;&nbsp; ✦ Brand Partnerships &nbsp;&nbsp; ✦ Lifestyle &nbsp;&nbsp; ✦ Beauty &nbsp;&nbsp; ✦ F&B &nbsp;&nbsp; ✦ Travel Content &nbsp;&nbsp; ✦ TikTok &amp; Reels &nbsp;&nbsp; ✦ Authentic Storytelling &nbsp;&nbsp; ✦ UGC Creator &nbsp;&nbsp; ✦ Dubai Based &nbsp;&nbsp; ✦ Video Content &nbsp;&nbsp; ✦ Brand Partnerships &nbsp;&nbsp; ✦ Lifestyle &nbsp;&nbsp; ✦ Beauty &nbsp;&nbsp; ✦ F&B &nbsp;&nbsp; ✦ Travel Content &nbsp;&nbsp; ✦ TikTok &amp; Reels &nbsp;&nbsp; ✦ Authentic Storytelling &nbsp;&nbsp;
+      </span>
+    </div>
+  </div>
+
+  <!-- Screen 2: Services -->
+  <div class="d5-screen2">
+    <p class="screen-label" style="color:#bbb; padding-bottom: 40px;">Screen 02 — Services</p>
+    <p class="d5-section-label">What I Do</p>
+    <h2 class="d5-section-title">
+      Services &amp;<br>
+      <span>Specialities</span>
+    </h2>
+    <div class="d5-services-grid">
+      <div class="d5-service-cell">
+        <div class="d5-service-cell-num">01</div>
+        <h3 class="d5-service-cell-title">Video UGC</h3>
+        <p class="d5-service-cell-text">TikTok, Reels, and ad-ready short-form video content. Hook-driven, trend-aware, and optimised for the UAE market.</p>
+      </div>
+      <div class="d5-service-cell">
+        <div class="d5-service-cell-num">02</div>
+        <h3 class="d5-service-cell-title">Photography</h3>
+        <p class="d5-service-cell-text">Lifestyle and product photography that tells a story. Shot across Dubai's most beautiful locations.</p>
+      </div>
+      <div class="d5-service-cell" style="border-right:none">
+        <div class="d5-service-cell-num">03</div>
+        <h3 class="d5-service-cell-title">Brand Campaigns</h3>
+        <p class="d5-service-cell-text">Multi-deliverable brand campaigns for consistent storytelling. Build trust with your audience over time.</p>
+      </div>
+      <div class="d5-service-cell" style="border-bottom:none">
+        <div class="d5-service-cell-num">04</div>
+        <h3 class="d5-service-cell-title">Reviews &amp; Unboxing</h3>
+        <p class="d5-service-cell-text">Real, unscripted reviews. Authentic testimonial content that converts browsers into buyers.</p>
+      </div>
+      <div class="d5-service-cell" style="border-bottom:none">
+        <div class="d5-service-cell-num">05</div>
+        <h3 class="d5-service-cell-title">Location Shoots</h3>
+        <p class="d5-service-cell-text">Leverage Dubai's stunning backdrops — from Burj Khalifa views to desert sunsets.</p>
+      </div>
+      <div class="d5-service-cell" style="border-bottom:none; border-right:none; background:#f1b84b;">
+        <div class="d5-service-cell-num" style="color:#212122;">50+</div>
+        <h3 class="d5-service-cell-title">Brands Worked With</h3>
+        <p class="d5-service-cell-text" style="color:rgba(33,33,34,0.6);">UAE and international brands across beauty, F&B, lifestyle, and more.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Screen 3: CTA / Contact -->
+  <div class="d5-screen3">
+    <p class="screen-label" style="color:rgba(255,255,255,0.2); padding-bottom: 40px; position:relative; z-index: 5;">Screen 03 — Contact</p>
+    <div class="d5-cta-inner">
+      <div>
+        <p class="d5-cta-label">Get In Touch</p>
+        <h2 class="d5-cta-title">
+          Let's Build<br>
+          <span>Something</span><br>
+          Real.
+        </h2>
+        <p class="d5-cta-text">Ready to level up your content? I'm currently accepting new brand partnerships and UGC projects. Let's talk about what we can create together.</p>
+        <a href="#" class="d5-cta-btn">Start a Project</a>
+      </div>
+      <div class="d5-form-side">
+        <form class="d5-form">
+          <div class="d5-form-row2">
+            <input class="d5-fi" type="text" placeholder="Name">
+            <input class="d5-fi" type="email" placeholder="Email">
+          </div>
+          <input class="d5-fi" type="text" placeholder="Brand / Company">
+          <textarea class="d5-fs" placeholder="Tell me about your project..."></textarea>
+          <button class="d5-form-submit" type="button">Send Message →</button>
+        </form>
+      </div>
+    </div>
+    <div style="height: 60px;"></div>
+    <footer class="d5-footer">
+      <div class="d5-footer-logo">Steph's <span>Studios</span></div>
+      <div class="d5-footer-text">© 2025 Steph's Studios · Dubai, UAE</div>
+    </footer>
+  </div>
+</div>
+
+
+<!-- ============================
+     SELECTION GUIDE
+============================= -->
+<div class="selection-section">
+  <div class="selection-inner">
+    <p class="selection-eyebrow">Next Steps</p>
+    <h2 class="selection-title">Which Direction Speaks to You?</h2>
+    <p class="selection-sub">There are no wrong answers — this is all about what feels right for you and the audience you want to attract. Take your time, trust your gut.</p>
+
+    <div class="design-cards">
+      <div class="design-card">
+        <div class="design-card-num">01</div>
+        <div class="design-card-name">Dark Magazine</div>
+        <div class="design-card-vibe">Editorial · Mint · Modern</div>
+        <div class="design-card-swatch d1-swatch"></div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-num">02</div>
+        <div class="design-card-name">Luxury Portfolio</div>
+        <div class="design-card-vibe">Elegant · Gold · Cinematic</div>
+        <div class="design-card-swatch d2-swatch"></div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-num">03</div>
+        <div class="design-card-name">Warm Beauty</div>
+        <div class="design-card-vibe">Feminine · Serif · Warm</div>
+        <div class="design-card-swatch d3-swatch"></div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-num">04</div>
+        <div class="design-card-name">Dramatic Bold</div>
+        <div class="design-card-vibe">Minimal · Pure Black · Type</div>
+        <div class="design-card-swatch d4-swatch"></div>
+      </div>
+      <div class="design-card">
+        <div class="design-card-num">05</div>
+        <div class="design-card-name">Creator Agency</div>
+        <div class="design-card-vibe">Bold · Graphic · Yellow</div>
+        <div class="design-card-swatch d5-swatch"></div>
+      </div>
+    </div>
+
+    <div class="notes-box">
+      <p class="notes-title">Things to consider when choosing</p>
+      <ul class="notes-text" style="padding-left: 20px;">
+        <li><strong>Who is your target client?</strong> Luxury / high-end brands lean toward 02 or 03. Challenger brands and startups suit 05. Agencies and content-first brands may prefer 01 or 04.</li>
+        <li><strong>What's your personal style?</strong> Warm, feminine, and approachable? → Design 03. Dark, bold, and editorial? → Designs 01, 04. Polished and graphic? → Design 05.</li>
+        <li><strong>You can mix elements.</strong> Once you choose a direction, we can blend colours, fonts, or layouts from other designs.</li>
+        <li><strong>No logo yet?</strong> No problem — once you choose a direction, we'll develop a logo to match the brand personality.</li>
+        <li>Feel free to note anything you love or dislike about any design — even small details help!</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

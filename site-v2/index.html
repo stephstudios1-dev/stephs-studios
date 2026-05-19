@@ -1,0 +1,1961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Steph's Studios | UGC Creator, Dubai</title>
+  <meta name="description" content="Dubai-based UGC creator making authentic content for fashion, lifestyle, travel and F&B brands. Manchester born, world travelled, Dubai based.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+
+    /* =========================================
+       RESET + BASE
+    ========================================= */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    :root {
+      --cream: #fdf8f3;
+      --cream-deep: #f5e6d3;
+      --cream-pale: #fceee0;
+      --espresso: #1a0f0a;
+      --espresso-mid: #2d1a10;
+      --sand: #e8b88a;
+      --sand-light: #f0d4b5;
+      --text: #1a0f0a;
+      --text-mid: #5a4a42;
+      --text-light: #9a8a82;
+      --white: #ffffff;
+      --nav-h: 78px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text);
+      background: var(--cream);
+      overflow-x: hidden;
+    }
+
+    img, video { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    button { font-family: inherit; cursor: pointer; }
+
+    /* =========================================
+       NAV
+    ========================================= */
+    .nav {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 1000;
+      height: var(--nav-h);
+      background: rgba(253,248,243,0.94);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(232,184,138,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 64px;
+    }
+
+    .nav-logo {
+      font-family: 'Prata', serif;
+      font-size: 21px;
+      color: var(--text);
+      letter-spacing: 0.3px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 12.5px;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      color: var(--text-mid);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: var(--espresso) !important;
+      color: var(--cream) !important;
+      padding: 10px 24px;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      letter-spacing: 1px !important;
+      font-size: 12px !important;
+      text-transform: uppercase;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--espresso-mid) !important; }
+
+    .nav-burger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      padding: 4px;
+    }
+
+    .nav-burger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    /* =========================================
+       MOBILE MENU
+    ========================================= */
+    .mob-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--cream);
+      z-index: 990;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 28px;
+    }
+
+    .mob-menu.open { display: flex; }
+
+    .mob-menu a {
+      font-family: 'Prata', serif;
+      font-size: 34px;
+      color: var(--text);
+    }
+
+    .mob-close {
+      position: absolute;
+      top: 26px;
+      right: 30px;
+      background: none;
+      border: none;
+      font-size: 28px;
+      color: var(--text);
+    }
+
+    /* =========================================
+       HERO
+    ========================================= */
+    .hero {
+      min-height: 100vh;
+      padding-top: var(--nav-h);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 60px 80px 80px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      display: block;
+      width: 26px;
+      height: 1px;
+      background: var(--sand);
+    }
+
+    .hero-title {
+      font-family: 'Prata', serif;
+      font-size: clamp(38px, 4.2vw, 68px);
+      line-height: 1.14;
+      color: var(--text);
+      margin-bottom: 26px;
+    }
+
+    .hero-title em {
+      color: var(--sand);
+      font-style: italic;
+    }
+
+    .hero-body {
+      font-size: 15.5px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.85;
+      max-width: 440px;
+      margin-bottom: 42px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background: var(--espresso);
+      color: var(--cream);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 16px 38px;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .btn-primary:hover { background: var(--espresso-mid); }
+
+    .btn-ghost {
+      font-size: 11.5px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--text);
+      border-bottom: 1.5px solid var(--sand);
+      padding-bottom: 3px;
+      transition: color 0.2s;
+    }
+
+    .btn-ghost:hover { color: var(--sand); }
+
+    .hero-visual {
+      background: var(--cream-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 60px 80px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-visual::after {
+      content: 'UGC';
+      position: absolute;
+      font-family: 'Prata', serif;
+      font-size: 200px;
+      font-style: italic;
+      color: rgba(232,184,138,0.08);
+      bottom: 20px;
+      right: 20px;
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    /* =========================================
+       IPHONE FRAME
+    ========================================= */
+    .iphone {
+      width: 272px;
+      background: linear-gradient(175deg, #2c2c2e 0%, #1c1c1e 100%);
+      border-radius: 52px;
+      padding: 13px;
+      position: relative;
+      box-shadow:
+        0 0 0 1.5px #3d3d3f,
+        inset 0 0 0 1px rgba(255,255,255,0.055),
+        0 40px 90px rgba(0,0,0,0.38),
+        0 16px 32px rgba(0,0,0,0.18);
+      flex-shrink: 0;
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .iphone-island {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 116px;
+      height: 33px;
+      background: #080808;
+      border-radius: 20px;
+      z-index: 30;
+    }
+
+    .iphone-power {
+      position: absolute;
+      right: -3.5px;
+      top: 148px;
+      width: 3.5px;
+      height: 68px;
+      background: #3a3a3c;
+      border-radius: 0 2.5px 2.5px 0;
+    }
+
+    .iphone-mute {
+      position: absolute;
+      left: -3.5px;
+      top: 104px;
+      width: 3.5px;
+      height: 30px;
+      background: #3a3a3c;
+      border-radius: 2.5px 0 0 2.5px;
+    }
+
+    .iphone-vol-up {
+      position: absolute;
+      left: -3.5px;
+      top: 152px;
+      width: 3.5px;
+      height: 56px;
+      background: #3a3a3c;
+      border-radius: 2.5px 0 0 2.5px;
+    }
+
+    .iphone-vol-down {
+      position: absolute;
+      left: -3.5px;
+      top: 218px;
+      width: 3.5px;
+      height: 56px;
+      background: #3a3a3c;
+      border-radius: 2.5px 0 0 2.5px;
+    }
+
+    .iphone-screen {
+      width: 100%;
+      height: 490px;
+      border-radius: 40px;
+      overflow: hidden;
+      background: #080808;
+      position: relative;
+    }
+
+    .iphone-screen video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel-item:hover .iphone {
+      transform: translateY(-10px);
+      box-shadow:
+        0 0 0 1.5px #3d3d3f,
+        inset 0 0 0 1px rgba(255,255,255,0.055),
+        0 60px 110px rgba(0,0,0,0.46),
+        0 24px 48px rgba(0,0,0,0.24);
+    }
+
+    /* Sound toggle on hero iPhone */
+    .sound-btn {
+      position: absolute;
+      bottom: 18px;
+      right: 18px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.52);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      backdrop-filter: blur(6px);
+      transition: background 0.2s;
+    }
+
+    .sound-btn:hover { background: rgba(0,0,0,0.75); }
+    .sound-btn svg { width: 15px; height: 15px; }
+
+    /* Carousel video controls */
+    .vid-controls {
+      position: absolute;
+      inset: 0;
+      z-index: 15;
+      cursor: pointer;
+    }
+
+    .vid-play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.55);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: transform 0.12s ease, opacity 0.35s ease;
+    }
+
+    .vid-play-icon.show {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 1;
+    }
+
+    .vid-play-icon svg { width: 20px; height: 20px; }
+
+    .vid-mute-btn {
+      position: absolute;
+      bottom: 12px;
+      right: 12px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.52);
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 20;
+      cursor: pointer;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      transition: background 0.2s;
+    }
+
+    .vid-mute-btn:hover { background: rgba(0,0,0,0.78); }
+    .vid-mute-btn svg { width: 13px; height: 13px; }
+
+    /* Placeholder screens (no video) */
+    .iphone-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .ph-fashion  { background: linear-gradient(160deg, #2d1a10 0%, #0d0806 100%); }
+    .ph-fitness  { background: linear-gradient(160deg, #0d1a2a 0%, #050d14 100%); }
+    .ph-fnb      { background: linear-gradient(160deg, #2a1008 0%, #0d0805 100%); }
+    .ph-lifestyle{ background: linear-gradient(160deg, #1a0f15 0%, #0a060a 100%); }
+    .ph-travel   { background: linear-gradient(160deg, #0a1a20 0%, #050d12 100%); }
+
+    .ph-icon {
+      font-size: 34px;
+      opacity: 0.45;
+    }
+
+    .ph-label {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: rgba(232,184,138,0.4);
+    }
+
+    /* =========================================
+       MARQUEE
+    ========================================= */
+    .marquee {
+      background: var(--espresso);
+      padding: 16px 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .marquee-inner {
+      display: flex;
+      white-space: nowrap;
+      animation: scroll 28s linear infinite;
+    }
+
+    .marquee-text {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--sand);
+      padding-right: 60px;
+      flex-shrink: 0;
+    }
+
+    .mq-sep { opacity: 0.35; }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =========================================
+       ABOUT
+    ========================================= */
+    .about {
+      background: var(--espresso);
+      padding: 120px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-visual {
+      position: relative;
+      height: 580px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .about-vis-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(145deg, #2e1b10 0%, #1a0f0a 55%, #240f07 100%);
+    }
+
+    .about-vis-name {
+      position: absolute;
+      bottom: 20px;
+      left: 26px;
+      font-family: 'Prata', serif;
+      font-size: 90px;
+      font-style: italic;
+      color: rgba(232,184,138,0.07);
+      line-height: 1;
+      user-select: none;
+    }
+
+    .about-vis-badge {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      width: 86px;
+      height: 86px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,184,138,0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .about-vis-badge span {
+      font-size: 8.5px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(232,184,138,0.5);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    .about-vis-flag {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(232,184,138,0.3);
+    }
+
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10.5px;
+      font-weight: 600;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 18px;
+    }
+
+    .section-tag::before {
+      content: '';
+      display: block;
+      width: 20px;
+      height: 1px;
+      background: var(--sand);
+    }
+
+    .about-title {
+      font-family: 'Prata', serif;
+      font-size: clamp(30px, 2.8vw, 46px);
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 26px;
+    }
+
+    .about-title em { color: var(--sand); font-style: italic; }
+
+    .about-text {
+      font-size: 14.5px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.95;
+      margin-bottom: 14px;
+    }
+
+    .about-stats {
+      display: flex;
+      gap: 44px;
+      margin-top: 42px;
+      padding-top: 42px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .stat-num {
+      font-family: 'Prata', serif;
+      font-size: 40px;
+      color: var(--sand);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .stat-lbl {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.28);
+    }
+
+    /* =========================================
+       WORK / PORTFOLIO
+    ========================================= */
+    .work {
+      background: var(--cream);
+      padding: 120px 0 80px;
+    }
+
+    .work-header {
+      padding: 0 80px;
+      margin-bottom: 80px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .work-title {
+      font-family: 'Prata', serif;
+      font-size: clamp(36px, 4vw, 62px);
+      line-height: 1.12;
+      color: var(--text);
+    }
+
+    .work-title em { color: var(--sand); font-style: italic; }
+
+    .work-note {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-light);
+      max-width: 270px;
+      line-height: 1.75;
+      text-align: right;
+    }
+
+    /* Category section */
+    .cat-section {
+      margin-bottom: 72px;
+      border-top: 1px solid rgba(232,184,138,0.18);
+      padding-top: 56px;
+    }
+
+    .cat-section:first-of-type { border-top: none; padding-top: 0; }
+
+    .cat-header {
+      padding: 0 80px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .cat-label {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .cat-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--sand);
+      flex-shrink: 0;
+    }
+
+    .cat-name {
+      font-family: 'Prata', serif;
+      font-size: 26px;
+      color: var(--text);
+    }
+
+    .cat-count {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      color: var(--text-light);
+    }
+
+    .cat-soon {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--sand);
+      background: rgba(232,184,138,0.12);
+      padding: 5px 12px;
+      border-radius: 20px;
+    }
+
+    .carousel-controls {
+      display: flex;
+      gap: 10px;
+    }
+
+    .ctrl-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(26,15,10,0.15);
+      background: transparent;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+
+    .ctrl-btn:hover {
+      background: var(--espresso);
+      border-color: var(--espresso);
+    }
+
+    .ctrl-btn:hover svg { stroke: var(--cream); }
+
+    .ctrl-btn svg {
+      width: 16px;
+      height: 16px;
+      stroke: var(--text-mid);
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* =========================================
+       HORIZONTAL SCROLL CAROUSEL
+    ========================================= */
+    .carousel {
+      display: flex;
+      gap: 28px;
+      overflow-x: scroll;
+      scroll-snap-type: x mandatory;
+      padding: 16px 80px 50px;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      cursor: grab;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .carousel:active { cursor: grabbing; }
+    .carousel::-webkit-scrollbar { display: none; }
+
+    .carousel-item { scroll-snap-align: start; flex-shrink: 0; }
+
+    .carousel-item:hover .iphone {
+      transform: translateY(-10px);
+      box-shadow:
+        0 0 0 1.5px #3d3d3f,
+        inset 0 0 0 1px rgba(255,255,255,0.055),
+        0 60px 110px rgba(0,0,0,0.46),
+        0 24px 48px rgba(0,0,0,0.24);
+    }
+
+    /* =========================================
+       SERVICES
+    ========================================= */
+    .services {
+      background: var(--white);
+      padding: 120px 80px;
+    }
+
+    .services-hd {
+      max-width: 560px;
+      margin-bottom: 64px;
+    }
+
+    .section-title {
+      font-family: 'Prata', serif;
+      font-size: clamp(30px, 3.2vw, 50px);
+      line-height: 1.18;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .section-title em { color: var(--sand); font-style: italic; }
+
+    .section-sub {
+      font-size: 14.5px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.8;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 2px;
+    }
+
+    .svc-card {
+      grid-column: span 2;
+      background: var(--cream);
+      padding: 44px 34px;
+      border: 1px solid rgba(232,184,138,0.12);
+      transition: background 0.2s;
+    }
+
+    .svc-card:nth-child(4),
+    .svc-card:nth-child(5) { grid-column: span 3; }
+
+    .svc-card:hover { background: var(--cream-pale); }
+
+    .svc-num {
+      font-family: 'Prata', serif;
+      font-size: 12px;
+      color: var(--sand);
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .svc-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: rgba(232,184,138,0.14);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 18px;
+    }
+
+    .svc-title {
+      font-family: 'Prata', serif;
+      font-size: 19px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+
+    .svc-text {
+      font-size: 13.5px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.82;
+    }
+
+    /* =========================================
+       WHY UGC
+    ========================================= */
+    .why {
+      background: var(--cream-pale);
+      padding: 110px 80px;
+    }
+
+    .why-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .why-title {
+      font-family: 'Prata', serif;
+      font-size: clamp(28px, 3vw, 48px);
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 22px;
+    }
+
+    .why-title em { color: var(--sand); font-style: italic; }
+
+    .why-text {
+      font-size: 14.5px;
+      font-weight: 300;
+      color: var(--text-mid);
+      line-height: 1.9;
+      margin-bottom: 14px;
+    }
+
+    .why-list {
+      list-style: none;
+      margin-top: 30px;
+    }
+
+    .why-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 13.5px;
+      color: var(--text-mid);
+      line-height: 1.65;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(232,184,138,0.2);
+    }
+
+    .why-list li:last-child { border-bottom: none; }
+
+    .why-list li::before {
+      content: '✓';
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--sand);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .why-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3px;
+    }
+
+    .wstat {
+      background: var(--white);
+      padding: 42px 32px;
+    }
+
+    .wstat-num {
+      font-family: 'Prata', serif;
+      font-size: 50px;
+      color: var(--sand);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .wstat-lbl {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       CONTACT
+    ========================================= */
+    .contact {
+      background: var(--espresso);
+      padding: 120px 80px;
+    }
+
+    .contact-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact-title {
+      font-family: 'Prata', serif;
+      font-size: clamp(30px, 3.2vw, 52px);
+      color: var(--white);
+      line-height: 1.18;
+      margin-bottom: 18px;
+    }
+
+    .contact-title em { color: var(--sand); font-style: italic; }
+
+    .contact-text {
+      font-size: 14.5px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.9;
+      margin-bottom: 38px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13.5px;
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 12px;
+    }
+
+    .cd-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,184,138,0.18);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+
+    .fi, .ft, .fs {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white);
+      padding: 15px 18px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13.5px;
+      outline: none;
+      border-radius: 2px;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+
+    .fi::placeholder, .ft::placeholder { color: rgba(255,255,255,0.22); }
+    .fi:focus, .ft:focus, .fs:focus { border-color: rgba(232,184,138,0.38); }
+
+    .ft { height: 130px; resize: none; }
+
+    .fs {
+      background: rgba(255,255,255,0.055);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.55);
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .fs option { background: var(--espresso-mid); color: var(--white); }
+
+    .form-submit {
+      align-self: flex-start;
+      background: var(--sand);
+      color: var(--espresso);
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: 17px 42px;
+      border: none;
+      border-radius: 2px;
+      transition: background 0.2s;
+    }
+
+    .form-submit:hover { background: var(--sand-light); }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+    .footer {
+      background: #0c0604;
+      padding: 46px 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .footer-logo {
+      font-family: 'Prata', serif;
+      font-size: 19px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover { color: var(--sand); }
+
+    .footer-copy {
+      font-size: 11px;
+      color: rgba(255,255,255,0.18);
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-socials a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,0.35);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .footer-socials a:hover { border-color: var(--sand); color: var(--sand); }
+    .footer-socials a svg { width: 16px; height: 16px; }
+
+    .nav-social {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav-social a {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1px solid rgba(26,15,10,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-mid);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .nav-social a:hover { border-color: var(--sand); color: var(--sand); }
+    .nav-social a svg { width: 14px; height: 14px; }
+
+    /* WhatsApp widget */
+    .wa-widget {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .wa-popup {
+      width: 320px;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+      overflow: hidden;
+      display: none;
+      transform-origin: bottom right;
+    }
+
+    .wa-popup.open { display: block; }
+
+    .wa-popup-header {
+      background: #25D366;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .wa-popup-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .wa-popup-info { flex: 1; }
+
+    .wa-popup-name {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .wa-popup-status {
+      display: block;
+      font-size: 11.5px;
+      color: rgba(255,255,255,0.75);
+      margin-top: 2px;
+    }
+
+    .wa-popup-close {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.65;
+      transition: opacity 0.2s;
+    }
+
+    .wa-popup-close:hover { opacity: 1; }
+
+    .wa-popup-body {
+      padding: 18px 18px 10px;
+    }
+
+    .wa-msg-bubble {
+      display: inline-block;
+      background: #f0f0f0;
+      padding: 12px 16px;
+      border-radius: 0 12px 12px 12px;
+      font-size: 13.5px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .wa-popup-footer {
+      padding: 12px 18px 18px;
+    }
+
+    .wa-start-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: #25D366;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 13px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .wa-start-btn:hover { background: #1ebe5d; }
+
+    .wa-btn {
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25D366;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.45);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 26px rgba(37,211,102,0.55);
+    }
+
+    /* =========================================
+       REVEAL ANIMATION
+    ========================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+
+    .reveal.on { opacity: 1; transform: translateY(0); }
+
+    /* =========================================
+       RESPONSIVE
+    ========================================= */
+    @media (max-width: 1100px) {
+      .about { grid-template-columns: 1fr; padding: 80px 50px; gap: 50px; }
+      .about-visual { height: 300px; }
+      .about-vis-name { font-size: 60px; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .why-inner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 900px) {
+      :root { --nav-h: 66px; }
+      .nav { padding: 0 28px; }
+      .nav-links { display: none; }
+      .nav-burger { display: flex; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-content { padding: 70px 28px 36px; }
+      .hero-visual {
+        display: flex;
+        background: transparent;
+        padding: 0 28px 64px;
+        min-height: unset;
+      }
+      .hero-visual::after { display: none; }
+      .hero-visual .iphone {
+        width: 170px;
+        border-radius: 33px;
+        padding: 8px;
+      }
+      .hero-visual .iphone-screen {
+        height: 308px;
+        border-radius: 26px;
+      }
+      .hero-visual .iphone-island {
+        width: 73px;
+        height: 21px;
+        top: 13px;
+      }
+      .hero-visual .iphone-power { top: 93px; height: 43px; }
+      .hero-visual .iphone-mute { top: 65px; height: 19px; }
+      .hero-visual .iphone-vol-up { top: 95px; height: 35px; }
+      .hero-visual .iphone-vol-down { top: 138px; height: 35px; }
+      .hero-visual .sound-btn { width: 28px; height: 28px; bottom: 10px; right: 10px; }
+      .hero-visual .sound-btn svg { width: 11px; height: 11px; }
+      .work-header { padding: 0 28px; flex-direction: column; align-items: flex-start; }
+      .work-note { text-align: left; max-width: 100%; }
+      .cat-header { padding: 0 28px; }
+      .carousel { padding: 16px 28px 50px; }
+      .about { padding: 80px 28px; }
+      .services { padding: 80px 28px; }
+      .services-grid { grid-template-columns: 1fr; }
+      .svc-card, .svc-card:nth-child(4), .svc-card:nth-child(5) { grid-column: span 1; }
+      .why { padding: 80px 28px; }
+      .contact { padding: 80px 28px; }
+      .footer { padding: 40px 28px; flex-direction: column; gap: 20px; text-align: center; }
+      .footer-links { flex-wrap: wrap; justify-content: center; }
+    }
+
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      .why-stats { grid-template-columns: 1fr 1fr; }
+      .about-stats { gap: 24px; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose" aria-label="Close menu">✕</button>
+  <a href="#work"     onclick="closeMob()">Work</a>
+  <a href="#about"    onclick="closeMob()">About</a>
+  <a href="#services" onclick="closeMob()">Services</a>
+  <a href="#contact"  onclick="closeMob()">Contact</a>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="siteNav">
+  <a href="#" class="nav-logo">Steph's Studios</a>
+  <ul class="nav-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact" class="nav-cta">Work With Me</a></li>
+  </ul>
+  <div class="nav-social">
+    <a href="https://www.instagram.com/stephstudios_?igsh=em56YTI1cXNqYzJz&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@stephanieparkinsonx?_r=1&_t=ZN-96Lx6avWZlO" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.49a8.18 8.18 0 004.78 1.52V6.56a4.85 4.85 0 01-1.01.13z"/></svg>
+    </a>
+  </div>
+  <button class="nav-burger" id="navBurger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">UGC Creator, Dubai</p>
+    <h1 class="hero-title">
+      Content that feels like a<br>
+      <em>recommendation</em><br>
+      from a friend.
+    </h1>
+    <p class="hero-body">
+      Hi, I'm Steph. Manchester born, world travelled, and now completely at home in Dubai. I create authentic content for brands that want to connect with real people, not just tick a marketing box.
+    </p>
+    <div class="hero-actions">
+      <a href="#work" class="btn-primary">See My Work</a>
+      <a href="#contact" class="btn-ghost">Let's Talk</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="iphone">
+      <div class="iphone-island"></div>
+      <div class="iphone-power"></div>
+      <div class="iphone-mute"></div>
+      <div class="iphone-vol-up"></div>
+      <div class="iphone-vol-down"></div>
+      <div class="iphone-screen">
+        <video id="heroVid" autoplay muted loop playsinline>
+          <source src="media/Fashion/v24044gl0000d7dt357og65gip6s05p0.mp4" type="video/mp4">
+        </video>
+        <button class="sound-btn" id="soundBtn" title="Toggle sound" aria-label="Toggle sound">
+          <svg id="soundIconOff" viewBox="0 0 24 24" fill="none">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="rgba(255,255,255,0.9)"/>
+            <line x1="23" y1="9" x2="17" y2="15" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/>
+            <line x1="17" y1="9" x2="23" y2="15" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg id="soundIconOn" viewBox="0 0 24 24" fill="none" style="display:none">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="rgba(255,255,255,0.9)"/>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<div class="marquee">
+  <div class="marquee-inner">
+    <span class="marquee-text">Fashion <span class="mq-sep">·</span> Fitness <span class="mq-sep">·</span> Food &amp; Beverage <span class="mq-sep">·</span> Lifestyle <span class="mq-sep">·</span> Travel <span class="mq-sep">·</span> Dubai <span class="mq-sep">·</span> UGC Creator <span class="mq-sep">·</span> Authentic Content <span class="mq-sep">·</span> Brand Partnerships <span class="mq-sep">·</span></span>
+    <span class="marquee-text">Fashion <span class="mq-sep">·</span> Fitness <span class="mq-sep">·</span> Food &amp; Beverage <span class="mq-sep">·</span> Lifestyle <span class="mq-sep">·</span> Travel <span class="mq-sep">·</span> Dubai <span class="mq-sep">·</span> UGC Creator <span class="mq-sep">·</span> Authentic Content <span class="mq-sep">·</span> Brand Partnerships <span class="mq-sep">·</span></span>
+    <span class="marquee-text">Fashion <span class="mq-sep">·</span> Fitness <span class="mq-sep">·</span> Food &amp; Beverage <span class="mq-sep">·</span> Lifestyle <span class="mq-sep">·</span> Travel <span class="mq-sep">·</span> Dubai <span class="mq-sep">·</span> UGC Creator <span class="mq-sep">·</span> Authentic Content <span class="mq-sep">·</span> Brand Partnerships <span class="mq-sep">·</span></span>
+    <span class="marquee-text">Fashion <span class="mq-sep">·</span> Fitness <span class="mq-sep">·</span> Food &amp; Beverage <span class="mq-sep">·</span> Lifestyle <span class="mq-sep">·</span> Travel <span class="mq-sep">·</span> Dubai <span class="mq-sep">·</span> UGC Creator <span class="mq-sep">·</span> Authentic Content <span class="mq-sep">·</span> Brand Partnerships <span class="mq-sep">·</span></span>
+  </div>
+</div>
+
+<!-- ===================== ABOUT ===================== -->
+<section class="about" id="about">
+  <div class="about-visual">
+    <div class="about-vis-bg"></div>
+    <div class="about-vis-badge">
+      <span>Dubai<br>Based<br>Creator</span>
+    </div>
+    <div class="about-vis-name">Steph</div>
+    <div class="about-vis-flag">&#x1F1E6;&#x1F1EA; Dubai, UAE</div>
+  </div>
+
+  <div class="reveal">
+    <p class="section-tag">About Steph</p>
+    <h2 class="about-title">
+      Manchester born.<br>
+      World travelled.<br>
+      <em>Dubai based.</em>
+    </h2>
+    <p class="about-text">
+      I grew up in Manchester where being straight-talking is basically a requirement. You work hard, say what you mean, and you don't put on a show you can't back up.
+    </p>
+    <p class="about-text">
+      After years of travelling to places I never thought I'd see, I eventually landed in Dubai and thought, yeah, this is the one. Stunning city, incredible food, ridiculous sunsets, and people from every corner of the world.
+    </p>
+    <p class="about-text">
+      What I do is simple: I create content that looks and feels like it came from a real person, not an ad agency. When it's done right, people stop scrolling. They watch. They trust. They buy. That's what I bring to every brand I work with.
+    </p>
+    <div class="about-stats">
+      <div>
+        <div class="stat-num">50+</div>
+        <div class="stat-lbl">Brands</div>
+      </div>
+      <div>
+        <div class="stat-num">3+</div>
+        <div class="stat-lbl">Years Creating</div>
+      </div>
+      <div>
+        <div class="stat-num">&#x1F30D;</div>
+        <div class="stat-lbl">Worldwide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORK ===================== -->
+<section class="work" id="work">
+  <div class="work-header reveal">
+    <div>
+      <p class="section-tag">Portfolio</p>
+      <h2 class="work-title">The <em>Work</em></h2>
+    </div>
+    <p class="work-note">Scroll each row to see more. More categories coming soon.</p>
+  </div>
+
+  <!-- FASHION -->
+  <div class="cat-section">
+    <div class="cat-header">
+      <div class="cat-label">
+        <div class="cat-dot"></div>
+        <h3 class="cat-name">Fashion</h3>
+
+      </div>
+      <div class="carousel-controls">
+        <button class="ctrl-btn" data-target="c-fashion" data-dir="-1" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="ctrl-btn" data-target="c-fashion" data-dir="1" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="carousel" id="c-fashion">
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/Fashion/v24044gl0000d7dt357og65gip6s05p0.mp4" type="video/mp4"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/Fashion/v24044gl0000d7himtfog65rfsu6ldag.mp4" type="video/mp4"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/Fashion/v24044gl0000d7jjvhfog65pp6cv9v30.mp4" type="video/mp4"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/Fashion/v24044gl0000d7l0c1fog65u77ejsrtg.mp4" type="video/mp4"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/Fashion/91965ffed757462dad123dde4530aaf4.mov" type="video/quicktime"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/Fashion/IMG_9784.MOV" type="video/quicktime"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/Fashion/IMG_9785.MOV" type="video/quicktime"></video></div></div></div>
+    </div>
+  </div>
+
+  <!-- FITNESS -->
+  <div class="cat-section">
+    <div class="cat-header">
+      <div class="cat-label">
+        <div class="cat-dot"></div>
+        <h3 class="cat-name">Fitness</h3>
+      </div>
+      <div class="carousel-controls">
+        <button class="ctrl-btn" data-target="c-fitness" data-dir="-1" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="ctrl-btn" data-target="c-fitness" data-dir="1" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="carousel" id="c-fitness">
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/fitness/v24044gl0000d7ubl2vog65n708r41mg.mp4" type="video/mp4"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/fitness/1d4c475de32e45f881262a80abb5bf22.mov" type="video/quicktime"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/fitness/996b7cc788a146e49d734529346fb389.mov" type="video/quicktime"></video></div></div></div>
+    </div>
+  </div>
+
+  <!-- F&B -->
+  <div class="cat-section">
+    <div class="cat-header">
+      <div class="cat-label">
+        <div class="cat-dot"></div>
+        <h3 class="cat-name">Food &amp; Beverage</h3>
+      </div>
+      <div class="carousel-controls">
+        <button class="ctrl-btn" data-target="c-fnb" data-dir="-1" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="ctrl-btn" data-target="c-fnb" data-dir="1" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="carousel" id="c-fnb">
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/fnb/v24044gl0000d7p353vog65oqfn16r50.mp4" type="video/mp4"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/fnb/21577f9342214028ba4e728f74c6e0e0.mov" type="video/quicktime"></video></div></div></div>
+    </div>
+  </div>
+
+  <!-- LIFESTYLE -->
+  <div class="cat-section">
+    <div class="cat-header">
+      <div class="cat-label">
+        <div class="cat-dot"></div>
+        <h3 class="cat-name">Lifestyle</h3>
+      </div>
+      <div class="carousel-controls">
+        <button class="ctrl-btn" data-target="c-lifestyle" data-dir="-1" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="ctrl-btn" data-target="c-lifestyle" data-dir="1" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="carousel" id="c-lifestyle">
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/lifestyle/v24044gl0000d7jjvhfog65pp6cv9v30.mp4" type="video/mp4"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/lifestyle/v24044gl0000d7l0c1fog65u77ejsrtg.mp4" type="video/mp4"></video></div></div></div>
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/lifestyle/0eecc7ee6cfe488bbc75fe35f2063c66.mov" type="video/quicktime"></video></div></div></div>
+    </div>
+  </div>
+
+  <!-- TRAVEL -->
+  <div class="cat-section">
+    <div class="cat-header">
+      <div class="cat-label">
+        <div class="cat-dot"></div>
+        <h3 class="cat-name">Travel</h3>
+      </div>
+      <div class="carousel-controls">
+        <button class="ctrl-btn" data-target="c-travel" data-dir="-1" aria-label="Previous">
+          <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="ctrl-btn" data-target="c-travel" data-dir="1" aria-label="Next">
+          <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="carousel" id="c-travel">
+      <div class="carousel-item"><div class="iphone"><div class="iphone-island"></div><div class="iphone-power"></div><div class="iphone-mute"></div><div class="iphone-vol-up"></div><div class="iphone-vol-down"></div><div class="iphone-screen"><video muted loop playsinline preload="metadata"><source src="media/travel/dd059725ebb84e0b97e3b7513ab92253.mov" type="video/quicktime"></video></div></div></div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services">
+  <div class="services-hd reveal">
+    <p class="section-tag">What I Offer</p>
+    <h2 class="section-title">Built for brands that want <em>real results</em></h2>
+    <p class="section-sub">Whether you need a single video or an ongoing content partnership, I create work that fits your brand and actually performs.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="svc-card">
+      <div class="svc-num">01</div>
+      <div class="svc-icon">&#x1F3AC;</div>
+      <h3 class="svc-title">Video UGC</h3>
+      <p class="svc-text">Short-form videos for TikTok, Instagram Reels and paid ad campaigns. Authentic, fast-cutting, and made to stop the scroll.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">02</div>
+      <div class="svc-icon">&#x1F4F8;</div>
+      <h3 class="svc-title">Photo Content</h3>
+      <p class="svc-text">Lifestyle and product photography that tells a story. Shot across Dubai's most beautiful locations and settings.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">03</div>
+      <div class="svc-icon">&#x1F91D;</div>
+      <h3 class="svc-title">Brand Campaigns</h3>
+      <p class="svc-text">Multi-deliverable campaigns for brands that want consistent, high-quality content over weeks or months. Full creative collaboration from brief to delivery.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">04</div>
+      <div class="svc-icon">&#x2B50;</div>
+      <h3 class="svc-title">Reviews and Unboxing</h3>
+      <p class="svc-text">Honest, watchable review content that builds genuine trust with your audience. The kind of video that makes people hit add to cart.</p>
+    </div>
+    <div class="svc-card">
+      <div class="svc-num">05</div>
+      <div class="svc-icon">&#x1F4CD;</div>
+      <h3 class="svc-title">Location Content</h3>
+      <p class="svc-text">Dubai has some of the most incredible backdrops in the world. Hotel lobbies, rooftop pools, desert landscapes, marina walks. I know them all.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY UGC ===================== -->
+<section class="why">
+  <div class="why-inner">
+    <div class="reveal">
+      <p class="section-tag">Why UGC</p>
+      <h2 class="why-title">Why brands are moving away from <em>traditional ads</em></h2>
+      <p class="why-text">
+        People scroll past polished, obviously-branded content without a second thought. But when a video feels like it was made by someone who actually uses the product, something shifts. The scroll stops.
+      </p>
+      <p class="why-text">
+        UGC bridges the gap between brand messaging and real human experience. It's affordable, versatile, and when it's done well, it outperforms traditional ad creative consistently.
+      </p>
+      <ul class="why-list">
+        <li>Works across paid and organic channels without additional production</li>
+        <li>Builds trust faster than polished brand ads</li>
+        <li>Looks native to the platform, so it doesn't feel like an ad</li>
+        <li>Quick turnaround from brief to delivery</li>
+        <li>Can be used across Instagram, TikTok, Facebook Ads and more</li>
+      </ul>
+    </div>
+    <div class="why-stats">
+      <div class="wstat">
+        <div class="wstat-num">4x</div>
+        <div class="wstat-lbl">higher click-through rate vs. traditional ads</div>
+      </div>
+      <div class="wstat">
+        <div class="wstat-num">79%</div>
+        <div class="wstat-lbl">of people say UGC influences their buying decisions</div>
+      </div>
+      <div class="wstat">
+        <div class="wstat-num">50%</div>
+        <div class="wstat-lbl">lower cost per click on average for UGC ad campaigns</div>
+      </div>
+      <div class="wstat">
+        <div class="wstat-num">3x</div>
+        <div class="wstat-lbl">more authentic than brand-created content, per consumers</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="contact-title">Let's work <em>together</em></h2>
+      <p class="contact-text">
+        Got a product, a launch, or a campaign that needs great content? Fill in the form and I'll come back to you within 24 hours. No lengthy call needed, just tell me what you're working on.
+      </p>
+      <div class="contact-detail">
+        <div class="cd-icon">&#x1F4E7;</div>
+        <span>hello@stephsstudios.com</span>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">&#x1F4CD;</div>
+        <span>Dubai, United Arab Emirates</span>
+      </div>
+      <div class="contact-detail">
+        <div class="cd-icon">&#x1F4F2;</div>
+        <span>@stephsstudios</span>
+      </div>
+    </div>
+
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-row">
+        <input class="fi" type="text" name="name" placeholder="Your name" required>
+        <input class="fi" type="email" name="email" placeholder="Email address" required>
+      </div>
+      <input class="fi" type="text" name="brand" placeholder="Brand or company name">
+      <select class="fs" name="service">
+        <option value="" disabled selected>What are you looking for?</option>
+        <option>Video UGC</option>
+        <option>Photo Content</option>
+        <option>Brand Campaign</option>
+        <option>Reviews and Unboxing</option>
+        <option>Location Content</option>
+        <option>Something else</option>
+      </select>
+      <textarea class="ft" name="message" placeholder="Tell me a bit about your project, product, or brand..."></textarea>
+      <button type="submit" class="form-submit">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <a href="#" class="footer-logo">Steph's Studios</a>
+  <ul class="footer-links">
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="footer-socials">
+    <a href="https://www.instagram.com/stephstudios_?igsh=em56YTI1cXNqYzJz&utm_source=qr" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+    </a>
+    <a href="https://www.tiktok.com/@stephanieparkinsonx?_r=1&_t=ZN-96Lx6avWZlO" target="_blank" rel="noopener" aria-label="TikTok">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.49a8.18 8.18 0 004.78 1.52V6.56a4.85 4.85 0 01-1.01.13z"/></svg>
+    </a>
+  </div>
+  <p class="footer-copy">&copy; 2025 Steph's Studios. All rights reserved.</p>
+</footer>
+
+<!-- WHATSAPP WIDGET -->
+<div class="wa-widget" id="waWidget">
+  <div class="wa-popup" id="waPopup">
+    <div class="wa-popup-header">
+      <div class="wa-popup-icon">
+        <svg viewBox="0 0 24 24" fill="white" width="22" height="22"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      </div>
+      <div class="wa-popup-info">
+        <span class="wa-popup-name">Steph's Studios</span>
+        <span class="wa-popup-status">Typically replies quickly</span>
+      </div>
+      <button class="wa-popup-close" id="waClose" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="rgba(0,0,0,0.45)" stroke-width="2.5" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="wa-popup-body">
+      <div class="wa-msg-bubble">Want to chat about a campaign? 💬</div>
+    </div>
+    <div class="wa-popup-footer">
+      <a href="https://wa.me/447791261153?text=Want%20to%20chat%20about%20a%20campaign%3F" target="_blank" rel="noopener" class="wa-start-btn">
+        <svg viewBox="0 0 24 24" fill="white" width="16" height="16"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+  <button class="wa-btn" id="waBtn" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="white" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </button>
+</div>
+
+<script>
+  // ── Mobile menu ──────────────────────────────────────────
+  const mobMenu  = document.getElementById('mobMenu');
+  const navBurger = document.getElementById('navBurger');
+  const mobClose  = document.getElementById('mobClose');
+
+  navBurger.addEventListener('click', () => mobMenu.classList.add('open'));
+  mobClose.addEventListener('click',  () => mobMenu.classList.remove('open'));
+
+  function closeMob() { mobMenu.classList.remove('open'); }
+
+  // ── Hero sound toggle ────────────────────────────────────
+  const heroVid    = document.getElementById('heroVid');
+  const soundBtn   = document.getElementById('soundBtn');
+  const iconOff    = document.getElementById('soundIconOff');
+  const iconOn     = document.getElementById('soundIconOn');
+
+  soundBtn.addEventListener('click', () => {
+    heroVid.muted = !heroVid.muted;
+    iconOff.style.display = heroVid.muted ? 'block' : 'none';
+    iconOn.style.display  = heroVid.muted ? 'none'  : 'block';
+  });
+
+  // ── Carousel video controls (play/pause + mute) ──────────
+  const MUTED_SVG   = `<svg viewBox="0 0 24 24" fill="none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="rgba(255,255,255,0.9)"/><line x1="23" y1="9" x2="17" y2="15" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/><line x1="17" y1="9" x2="23" y2="15" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg>`;
+  const UNMUTED_SVG = `<svg viewBox="0 0 24 24" fill="none"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="rgba(255,255,255,0.9)"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07" stroke="rgba(255,255,255,0.9)" stroke-width="2" stroke-linecap="round"/></svg>`;
+  const PLAY_SVG    = `<svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)"><polygon points="5 3 19 12 5 21 5 3"/></svg>`;
+  const PAUSE_SVG   = `<svg viewBox="0 0 24 24" fill="rgba(255,255,255,0.9)"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>`;
+
+  document.querySelectorAll('.iphone-screen').forEach(screen => {
+    if (screen.closest('.hero-visual')) return;
+    const vid = screen.querySelector('video');
+    if (!vid) return;
+
+    const ctrl = document.createElement('div');
+    ctrl.className = 'vid-controls';
+
+    const icon = document.createElement('div');
+    icon.className = 'vid-play-icon';
+    icon.innerHTML = PLAY_SVG;
+    ctrl.appendChild(icon);
+
+    const muteBtn = document.createElement('button');
+    muteBtn.className = 'vid-mute-btn';
+    muteBtn.setAttribute('aria-label', 'Toggle sound');
+    muteBtn.innerHTML = MUTED_SVG;
+    ctrl.appendChild(muteBtn);
+
+    screen.appendChild(ctrl);
+
+    let flashTimer;
+    ctrl.addEventListener('click', e => {
+      if (e.target.closest('.vid-mute-btn')) return;
+      if (vid.paused) {
+        vid.play().catch(() => {});
+        icon.innerHTML = PAUSE_SVG;
+      } else {
+        vid.pause();
+        icon.innerHTML = PLAY_SVG;
+      }
+      icon.classList.add('show');
+      clearTimeout(flashTimer);
+      flashTimer = setTimeout(() => icon.classList.remove('show'), 900);
+    });
+
+    muteBtn.addEventListener('click', () => {
+      vid.muted = !vid.muted;
+      muteBtn.innerHTML = vid.muted ? MUTED_SVG : UNMUTED_SVG;
+    });
+  });
+
+  // ── Carousel next/prev buttons ───────────────────────────
+  document.querySelectorAll('.ctrl-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const track = document.getElementById(btn.dataset.target);
+      if (!track) return;
+      const itemW = track.querySelector('.carousel-item')?.offsetWidth || 300;
+      track.scrollBy({ left: parseInt(btn.dataset.dir) * (itemW + 28), behavior: 'smooth' });
+    });
+  });
+
+  // ── Drag-to-scroll on carousels ───────────────────────────
+  document.querySelectorAll('.carousel').forEach(track => {
+    let dragging = false, startX, sl;
+
+    track.addEventListener('mousedown', e => {
+      dragging = true;
+      startX   = e.pageX - track.offsetLeft;
+      sl       = track.scrollLeft;
+    });
+
+    track.addEventListener('mousemove', e => {
+      if (!dragging) return;
+      e.preventDefault();
+      track.scrollLeft = sl - (e.pageX - track.offsetLeft - startX) * 1.5;
+    });
+
+    ['mouseup', 'mouseleave'].forEach(ev =>
+      track.addEventListener(ev, () => { dragging = false; })
+    );
+  });
+
+  // ── Video autoplay on scroll ──────────────────────────────
+  const vidObs = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const vid = entry.target;
+      if (entry.isIntersecting) {
+        vid.play().catch(() => {});
+      } else {
+        vid.pause();
+      }
+    });
+  }, { threshold: 0.25 });
+
+  document.querySelectorAll('.iphone-screen video').forEach(v => vidObs.observe(v));
+
+  // ── Scroll reveal ─────────────────────────────────────────
+  const revObs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
+
+  // ── Contact form handler ──────────────────────────────────
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn  = e.target.querySelector('.form-submit');
+    const data = new FormData(e.target);
+    btn.textContent = 'Sending...';
+    btn.disabled = true;
+    fetch('https://formsubmit.co/ajax/stephstudios1@gmail.com', {
+      method: 'POST',
+      headers: { 'Accept': 'application/json' },
+      body: data
+    })
+    .then(r => r.json())
+    .then(() => {
+      btn.textContent = 'Message Sent!';
+      btn.style.background = '#c8a06a';
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+        e.target.reset();
+      }, 4000);
+    })
+    .catch(() => {
+      btn.textContent = 'Try again';
+      btn.disabled = false;
+    });
+  }
+
+  // ── WhatsApp widget ───────────────────────────────────
+  const waBtn   = document.getElementById('waBtn');
+  const waPopup = document.getElementById('waPopup');
+  const waClose = document.getElementById('waClose');
+
+  waBtn.addEventListener('click', () => waPopup.classList.toggle('open'));
+  waClose.addEventListener('click', () => waPopup.classList.remove('open'));
+</script>
+
+</body>
+</html>

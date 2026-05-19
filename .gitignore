@@ -1,0 +1,13 @@
+# Zip archives (large, not needed in repo)
+*.zip
+
+# Template reference folders (not the live site)
+beatrix-modern-magazine-html-template-2024-04-05-18-37-38-utc/
+emily-creative-photography-portfolio-2023-11-27-05-35-42-utc/
+fynex-creative-coming-soon-template-2023-11-27-05-06-47-utc/
+qeen-beauty-fashion-blogger-html-template-2023-11-27-05-05-30-utc/
+website-template-for-digital-creators-2023-11-27-05-07-52-utc/
+
+# OS files
+.DS_Store
+Thumbs.db
