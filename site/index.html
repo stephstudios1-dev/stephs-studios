@@ -2773,13 +2773,14 @@
   function handleSubmit(e) {
     e.preventDefault();
     const btn  = e.target.querySelector('.form-submit');
-    const data = new FormData(e.target);
+    const raw  = new FormData(e.target);
+    const body = JSON.stringify(Object.fromEntries(raw.entries()));
     btn.textContent = 'Sending...';
     btn.disabled = true;
     fetch('https://formsubmit.co/ajax/stephstudios1@gmail.com', {
       method: 'POST',
-      headers: { 'Accept': 'application/json' },
-      body: data
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: body
     })
     .then(r => r.json())
     .then(() => {
