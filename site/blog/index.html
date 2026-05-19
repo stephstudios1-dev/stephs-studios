@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | Steph's Studios — UGC Content Creator Dubai</title>
+  <meta name="description" content="Insights on UGC, content creation, and the Dubai market from Steph Parkinson. Talking heads, unboxing, street interviews, F&B, fashion, fitness and travel.">
+  <meta name="keywords" content="UGC blog Dubai, content creation tips, UGC creator blog, content marketing Dubai, Dubai content creator blog">
+  <link rel="canonical" href="https://www.stephsstudios.com/blog/">
+  <meta property="og:title" content="Blog | Steph's Studios">
+  <meta property="og:description" content="Insights on UGC, content creation, and the Dubai market from Steph Parkinson.">
+  <meta property="og:url" content="https://www.stephsstudios.com/blog/">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Prata&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --cream:#fdf8f3; --espresso:#1a0f0a; --sand:#e8b88a; --text:#1a0f0a; --text-mid:#5a4a42; --white:#fff; }
+    body { font-family:'Poppins',sans-serif; background:var(--cream); color:var(--text); }
+    a { color:inherit; text-decoration:none; }
+
+    /* NAV */
+    .nav { background:rgba(253,248,243,0.96); border-bottom:1px solid rgba(232,184,138,0.18); padding:0 64px; height:72px; display:flex; align-items:center; justify-content:space-between; position:sticky; top:0; z-index:100; backdrop-filter:blur(12px); }
+    .nav-logo { font-family:'Prata',serif; font-size:19px; }
+    .nav-cta { font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--sand); }
+
+    /* HERO */
+    .blog-index-hero { background:var(--espresso); padding:96px 64px 80px; }
+    .blog-index-hero h1 { font-family:'Prata',serif; font-size:clamp(36px,5vw,72px); color:#fff; line-height:1.1; margin-bottom:20px; }
+    .blog-index-hero p { font-size:15px; font-weight:300; color:rgba(255,255,255,0.45); max-width:520px; line-height:1.8; }
+
+    /* FILTER BAR */
+    .filter-bar { padding:36px 64px 0; display:flex; gap:10px; flex-wrap:wrap; }
+    .filter-btn { font-size:10.5px; font-weight:600; letter-spacing:2px; text-transform:uppercase; padding:9px 20px; border:1px solid rgba(232,184,138,0.3); background:transparent; color:var(--text-mid); cursor:pointer; transition:all 0.2s; border-radius:2px; }
+    .filter-btn.active, .filter-btn:hover { background:var(--espresso); color:#fff; border-color:var(--espresso); }
+
+    /* GRID */
+    .blog-index-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; padding:40px 64px 0; }
+    .blog-card { background:var(--white); padding:40px 34px; display:flex; flex-direction:column; gap:14px; transition:background 0.2s, transform 0.25s, box-shadow 0.25s; }
+    .blog-card:hover { background:#f7f1ea; transform:translateY(-4px); box-shadow:0 12px 40px rgba(0,0,0,0.08); z-index:1; }
+    .blog-card-cat { font-size:9.5px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--sand); }
+    .blog-card-title { font-family:'Prata',serif; font-size:18px; color:var(--text); line-height:1.4; }
+    .blog-card-excerpt { font-size:13px; font-weight:300; color:var(--text-mid); line-height:1.85; flex:1; }
+    .blog-card-read { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--sand); margin-top:6px; display:flex; align-items:center; gap:6px; }
+    .blog-card-read::after { content:'→'; }
+
+    /* CTA STRIP */
+    .blog-cta-strip { margin:64px 64px 0; background:var(--espresso); padding:52px 64px; display:flex; align-items:center; justify-content:space-between; gap:40px; }
+    .blog-cta-strip h3 { font-family:'Prata',serif; font-size:26px; color:#fff; max-width:440px; line-height:1.3; }
+    .btn { display:inline-block; background:var(--sand); color:var(--espresso); font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; padding:16px 38px; border-radius:2px; white-space:nowrap; }
+
+    /* FOOTER */
+    .footer { background:#0c0604; padding:36px 64px; display:flex; align-items:center; justify-content:space-between; margin-top:80px; }
+    .footer-logo { font-family:'Prata',serif; font-size:17px; color:rgba(255,255,255,0.45); }
+    .footer-copy { font-size:11px; color:rgba(255,255,255,0.18); }
+
+    @media(max-width:1100px) { .blog-index-grid { grid-template-columns:repeat(2,1fr); } }
+    @media(max-width:768px) {
+      .nav { padding:0 24px; }
+      .blog-index-hero { padding:70px 24px 60px; }
+      .filter-bar { padding:28px 24px 0; }
+      .blog-index-grid { grid-template-columns:1fr; padding:32px 24px 0; }
+      .blog-cta-strip { margin:40px 24px 0; padding:40px 28px; flex-direction:column; align-items:flex-start; }
+      .footer { padding:28px 24px; flex-direction:column; gap:14px; }
+    }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBDKRCBC4K"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EBDKRCBC4K');
+  </script>
+</head>
+<body>
+
+<nav class="nav">
+  <a href="../index.html" class="nav-logo">Steph's Studios</a>
+  <a href="../index.html#contact" class="nav-cta">Work With Me</a>
+</nav>
+
+<header class="blog-index-hero">
+  <h1>Content.<br>Insights.<br>Dubai.</h1>
+  <p>Everything I have learned about UGC, content creation, and building brands in one of the world's most exciting markets. Written in plain English, no fluff.</p>
+</header>
+
+<div class="filter-bar">
+  <button class="filter-btn active">All</button>
+  <button class="filter-btn">UGC</button>
+  <button class="filter-btn">Fashion</button>
+  <button class="filter-btn">Fitness</button>
+  <button class="filter-btn">Food &amp; Beverage</button>
+  <button class="filter-btn">Travel</button>
+  <button class="filter-btn">For Brands</button>
+</div>
+
+<section class="blog-index-grid">
+
+  <a class="blog-card" href="what-is-ugc-dubai.html">
+    <span class="blog-card-cat">UGC</span>
+    <h2 class="blog-card-title">What Is UGC and Why Every Brand in Dubai Needs It Right Now</h2>
+    <p class="blog-card-excerpt">Everyone is talking about UGC but half of Dubai's brands still don't fully know what it means for them. Here is the honest, no-fluff breakdown.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="talking-head-videos-that-convert.html">
+    <span class="blog-card-cat">Content Creation</span>
+    <h2 class="blog-card-title">How I Film Talking Head Videos That Actually Convert</h2>
+    <p class="blog-card-excerpt">No studio, no crew, no fuss. Here is exactly how I film talking head UGC videos that stop the scroll and turn viewers into customers.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="best-spots-dubai-outdoor-content.html">
+    <span class="blog-card-cat">Travel &amp; Location</span>
+    <h2 class="blog-card-title">The Best Outdoor Locations in Dubai for Content Creation</h2>
+    <p class="blog-card-excerpt">I film content all over this city and some locations are genuinely magic. Here are the outdoor spots I keep coming back to and what works best at each one.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="unboxing-videos-why-they-work.html">
+    <span class="blog-card-cat">UGC</span>
+    <h2 class="blog-card-title">Why Unboxing Videos Work So Well for Product Brands</h2>
+    <p class="blog-card-excerpt">There is a reason unboxing content has been one of the most popular formats on the internet for over a decade. Here is the psychology behind why it converts.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="street-interviews-dubai-brands.html">
+    <span class="blog-card-cat">Content Strategy</span>
+    <h2 class="blog-card-title">Why Street Interviews Are the Most Powerful UGC Format for Dubai Brands</h2>
+    <p class="blog-card-excerpt">Real people, genuine reactions, filmed in the most cosmopolitan city in the Middle East. The social proof format that Dubai brands are not using enough.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="fnb-content-creation-dubai.html">
+    <span class="blog-card-cat">Food &amp; Beverage</span>
+    <h2 class="blog-card-title">F&amp;B Content Creation in Dubai: What Actually Works</h2>
+    <p class="blog-card-excerpt">Dubai's food and drink scene is one of the most competitive in the world. Here is what I have learned about making F&amp;B UGC that genuinely drives footfall.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="how-to-brief-a-ugc-creator.html">
+    <span class="blog-card-cat">For Brands</span>
+    <h2 class="blog-card-title">How to Brief a UGC Creator: Get Better Content Every Time</h2>
+    <p class="blog-card-excerpt">A bad brief produces bad content. Here is exactly what I need from a brand to deliver UGC that hits, performs well, and does not need endless revisions.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="fitness-brands-tiktok-ugc.html">
+    <span class="blog-card-cat">Fitness</span>
+    <h2 class="blog-card-title">Why Fitness Brands Are Winning on TikTok With UGC</h2>
+    <p class="blog-card-excerpt">Fitness brands that embrace authentic UGC are absolutely dominating TikTok right now. Here is why the format works so well and how to get it right.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="dubai-fashion-ugc.html">
+    <span class="blog-card-cat">Fashion</span>
+    <h2 class="blog-card-title">Dubai Fashion UGC: How Clothing Brands Can Win With Authentic Content</h2>
+    <p class="blog-card-excerpt">Dubai's fashion scene is exciting and hugely competitive. Here is how fashion brands in the UAE are using UGC to stand out and convert.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+  <a class="blog-card" href="travel-content-creation.html">
+    <span class="blog-card-cat">Travel</span>
+    <h2 class="blog-card-title">Travel Content Creation in Dubai: A Guide for Hospitality Brands</h2>
+    <p class="blog-card-excerpt">Travel brands and hotels in Dubai are sitting on incredible content opportunities. Here is why authentic beats polished every time in this market.</p>
+    <span class="blog-card-read">Read Post</span>
+  </a>
+
+</section>
+
+<div class="blog-cta-strip">
+  <h3>Ready to create content that actually does something?</h3>
+  <a href="../index.html#contact" class="btn">Work With Steph</a>
+</div>
+
+<footer class="footer">
+  <span class="footer-logo">Steph's Studios</span>
+  <span class="footer-copy">&copy; 2026 Steph's Studios</span>
+</footer>
+
+</body>
+</html>
