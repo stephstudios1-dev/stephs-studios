@@ -2770,32 +2770,63 @@
   document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
 
   // ── Contact form handler ──────────────────────────────────
+  // To enable on-page submission: get a free key at web3forms.com and replace the placeholder below
+  var W3F_KEY = 'YOUR_WEB3FORMS_KEY';
+
+  function showFormSuccess(btn, form) {
+    btn.textContent = 'Message Sent!';
+    btn.style.background = '#c8a06a';
+    setTimeout(function() {
+      btn.textContent = 'Send Message';
+      btn.style.background = '';
+      btn.disabled = false;
+      form.reset();
+    }, 4000);
+  }
+
+  function mailtoFallback(btn, form, fields) {
+    var subj = encodeURIComponent("New enquiry \u2014 Steph's Studios");
+    var body = encodeURIComponent(
+      'Name: '    + (fields.name    || '') +
+      '\nEmail: ' + (fields.email   || '') +
+      (fields.brand   ? '\nBrand: '   + fields.brand   : '') +
+      (fields.service ? '\nService: ' + fields.service : '') +
+      '\n\nMessage:\n' + (fields.message || '')
+    );
+    window.open('mailto:stephstudios1@gmail.com?subject=' + subj + '&body=' + body);
+    showFormSuccess(btn, form);
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
-    const btn  = e.target.querySelector('.form-submit');
-    const raw  = new FormData(e.target);
-    const body = JSON.stringify(Object.fromEntries(raw.entries()));
+    var btn    = e.target.querySelector('.form-submit');
+    var raw    = new FormData(e.target);
+    var fields = Object.fromEntries(raw.entries());
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    fetch('https://formsubmit.co/ajax/stephstudios1@gmail.com', {
+
+    if (!W3F_KEY || W3F_KEY === 'YOUR_WEB3FORMS_KEY') {
+      mailtoFallback(btn, e.target, fields);
+      return;
+    }
+
+    var controller = new AbortController();
+    var timer = setTimeout(function() { controller.abort(); }, 10000);
+
+    fetch('https://api.web3forms.com/submit', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-      body: body
+      body: JSON.stringify(Object.assign({ access_key: W3F_KEY, subject: "New enquiry \u2014 Steph's Studios" }, fields)),
+      signal: controller.signal
     })
-    .then(r => r.json())
-    .then(() => {
-      btn.textContent = 'Message Sent!';
-      btn.style.background = '#c8a06a';
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        btn.disabled = false;
-        e.target.reset();
-      }, 4000);
+    .then(function(r) { clearTimeout(timer); return r.json(); })
+    .then(function(data) {
+      if (data.success) { showFormSuccess(btn, e.target); }
+      else { mailtoFallback(btn, e.target, fields); }
     })
-    .catch(() => {
-      btn.textContent = 'Try again';
-      btn.disabled = false;
+    .catch(function() {
+      clearTimeout(timer);
+      mailtoFallback(btn, e.target, fields);
     });
   }
 
