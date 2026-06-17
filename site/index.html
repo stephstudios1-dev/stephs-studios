@@ -1667,6 +1667,43 @@
 
     .price-cta:hover { background: var(--espresso-mid); }
 
+    /* Add-ons strip */
+    .pricing-addons {
+      margin-top: 48px;
+      background: var(--espresso);
+      border-radius: 4px;
+      padding: 32px 40px;
+    }
+    .addons-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--sand);
+      margin-bottom: 24px;
+    }
+    .addons-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 40px;
+    }
+    .addon-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .addon-name {
+      font-size: 13px;
+      color: rgba(253,248,243,0.8);
+      font-family: 'Poppins', sans-serif;
+    }
+    .addon-price {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--cream);
+      white-space: nowrap;
+    }
+
     @media (max-width: 1100px) {
       .pricing-grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -1674,6 +1711,8 @@
     @media (max-width: 600px) {
       .pricing { padding: 80px 28px; }
       .pricing-grid { grid-template-columns: 1fr; }
+      .pricing-addons { padding: 28px 20px; }
+      .addons-grid { flex-direction: column; gap: 12px; }
     }
 
     /* =========================================
@@ -2263,44 +2302,20 @@
 
   <div class="pricing-grid">
 
-    <!-- TEST DRIVE -->
-    <div class="price-card reveal">
-      <p class="price-tier">Test Drive</p>
-      <h3 class="price-name">Test Drive</h3>
-      <p class="price-tagline">Try the format before you go all in.</p>
-      <div class="price-amount">
-        <span class="price-currency">AED</span>
-        <span class="price-num">1,500</span>
-      </div>
-      <p class="price-period">/ project</p>
-      <div class="price-divider"></div>
-      <ul class="price-features">
-        <li class="price-feature-item">1 on-location shoot</li>
-        <li class="price-feature-item">3 hook variations &mdash; A/B ready</li>
-        <li class="price-feature-item">Professional edit with captions</li>
-        <li class="price-feature-item">Delivered in 5 business days</li>
-      </ul>
-      <a href="#contact" class="price-cta">Get Started</a>
-    </div>
-
     <!-- STARTER -->
     <div class="price-card reveal">
       <p class="price-tier">Starter</p>
       <h3 class="price-name">Starter</h3>
-      <p class="price-tagline">Your first taste of content that doesn't feel like an ad.</p>
+      <p class="price-tagline">The perfect intro to content that actually converts.</p>
       <div class="price-amount">
         <span class="price-currency">AED</span>
-        <span class="price-num">2,500</span>
+        <span class="price-num">800</span>
       </div>
-      <p class="price-period">/ project</p>
+      <p class="price-period">/ package</p>
       <div class="price-divider"></div>
       <ul class="price-features">
-        <li class="price-feature-item">2 professionally edited ads (15&ndash;60s)</li>
-        <li class="price-feature-item">1 content format</li>
-        <li class="price-feature-item">On-location shoot in Dubai</li>
-        <li class="price-feature-item">Captions included</li>
-        <li class="price-feature-item">1 round of revisions</li>
-        <li class="price-feature-item">Delivered in 7 business days</li>
+        <li class="price-feature-item">1 video</li>
+        <li class="price-feature-item">Organic usage included</li>
       </ul>
       <a href="#contact" class="price-cta">Get Started</a>
     </div>
@@ -2310,50 +2325,61 @@
       <div class="price-badge">Most Popular</div>
       <p class="price-tier">Growth</p>
       <h3 class="price-name">Growth</h3>
-      <p class="price-tagline">For brands who've seen what works and want more of it.</p>
+      <p class="price-tagline">More content, more reach, more results.</p>
       <div class="price-amount">
         <span class="price-currency">AED</span>
-        <span class="price-num">5,000</span>
+        <span class="price-num">1,200</span>
       </div>
-      <p class="price-period">/ month</p>
+      <p class="price-period">/ package</p>
       <div class="price-divider"></div>
       <ul class="price-features">
-        <li class="price-feature-item">5 professionally edited ads (15&ndash;60s)</li>
-        <li class="price-feature-item">Up to 3 content formats</li>
-        <li class="price-feature-item">On-location shoot(s) in UAE</li>
-        <li class="price-feature-item">Captions &amp; music</li>
-        <li class="price-feature-item">Content strategy session</li>
-        <li class="price-feature-item">2 rounds of revisions</li>
-        <li class="price-feature-item">Raw footage included</li>
-        <li class="price-feature-item">Monthly performance review</li>
+        <li class="price-feature-item">2 videos</li>
+        <li class="price-feature-item">2 images</li>
+        <li class="price-feature-item">Organic usage included</li>
       </ul>
       <a href="#contact" class="price-cta">Let's Talk</a>
     </div>
 
-    <!-- PARTNER -->
+    <!-- SCALE -->
     <div class="price-card reveal">
-      <p class="price-tier">Partner</p>
-      <h3 class="price-name">Partner</h3>
-      <p class="price-tagline">For brands that want to own their content pipeline.</p>
+      <p class="price-tier">Scale</p>
+      <h3 class="price-name">Scale</h3>
+      <p class="price-tagline">For brands ready to dominate the feed.</p>
       <div class="price-amount">
         <span class="price-currency">AED</span>
-        <span class="price-num">8,000</span>
+        <span class="price-num">2,500</span>
       </div>
-      <p class="price-period">/ month</p>
+      <p class="price-period">/ package</p>
       <div class="price-divider"></div>
       <ul class="price-features">
-        <li class="price-feature-item">10 professionally edited ads / month</li>
-        <li class="price-feature-item">All content formats</li>
-        <li class="price-feature-item">Weekly shoot sessions</li>
-        <li class="price-feature-item">Full content strategy &amp; calendar</li>
-        <li class="price-feature-item">Platform edits (Reels + TikTok + Shorts)</li>
-        <li class="price-feature-item">Unlimited revisions</li>
-        <li class="price-feature-item">Analytics &amp; performance reports</li>
+        <li class="price-feature-item">5 videos</li>
+        <li class="price-feature-item">5 images</li>
+        <li class="price-feature-item">Organic usage included</li>
       </ul>
-      <a href="#contact" class="price-cta">Contact Me</a>
+      <a href="#contact" class="price-cta">Get Started</a>
     </div>
 
   </div>
+
+  <!-- ADD-ONS -->
+  <div class="pricing-addons reveal">
+    <p class="addons-label">Add-ons</p>
+    <div class="addons-grid">
+      <div class="addon-item">
+        <span class="addon-name">Paid ads usage &mdash; 30 days</span>
+        <span class="addon-price">AED 240</span>
+      </div>
+      <div class="addon-item">
+        <span class="addon-name">Paid ads usage &mdash; 90 days</span>
+        <span class="addon-price">AED 550</span>
+      </div>
+      <div class="addon-item">
+        <span class="addon-name">Extra hook / variation</span>
+        <span class="addon-price">AED 100</span>
+      </div>
+    </div>
+  </div>
+
 </section>
 
 <!-- ===================== BLOG ===================== -->
